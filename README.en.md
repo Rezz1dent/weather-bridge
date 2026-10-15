@@ -8,7 +8,7 @@
 not use your location: Breezy fetches the weather, the bridge only forwards it. As an example,
 the repository includes **Breezy Minimal**, a KWGT widget built on these variables.
 
-![Breezy Minimal on the home screen](docs/images/widget.jpg)
+<img src="docs/images/bridge-en.jpg" width="300" alt="Weather Bridge screen">
 
 > Independent, unofficial project. Not affiliated with Breezy Weather or Kustom Industries.
 
@@ -55,13 +55,7 @@ screen; its launcher icon can be hidden (see [Install](#install)).
 
 The bridge's screen shows the setup steps, the permission and data status, and every variable
 with its latest value; tap one to copy its formula. Interface: English or Russian (switch in the
-top-right corner).
-
-<details>
-<summary><b>Screenshot of the bridge</b> (click to expand)</summary>
-<br>
-<img src="docs/images/bridge-en.jpg" width="320" alt="Weather Bridge screen">
-</details>
+top-right corner) — see the screenshot at the top of the page.
 
 ### Variables
 
@@ -149,6 +143,16 @@ there until the launcher restarts. Restart the phone and it disappears.
 A KWGT widget made for the bridge: one look at the time, the weather now, today and tomorrow.
 It shows how the variables can be used, and works as is once the bridge is set up.
 
+![Breezy Minimal on the home screen](docs/images/widget.jpg)
+
+<details>
+<summary><b>The same widget with every element</b> (<code>maximal</code> switch, click to expand)</summary>
+<br>
+
+![Breezy Minimal with every element](docs/images/widget-maximal.jpg)
+
+</details>
+
 ### Install
 
 1. Set up Weather Bridge (above).
@@ -161,9 +165,8 @@ It shows how the variables can be used, and works as is once the bridge is set u
 
 ### Description
 
-Everything the widget can show, here with the test values of the `maximal` switch:
-
-![Breezy Minimal with every element](docs/images/widget-maximal.jpg)
+Everything the widget can show. The examples are the test values of the `maximal` switch (the
+screenshot with every element is in the spoiler at the start of this section).
 
 | Row | Element | Meaning | Source | Shown |
 |---|---|---|---|---|
@@ -188,7 +191,7 @@ other phones change the action of the "Ярлык Часов" element in KWGT).
 
 - **Elements appear and disappear** with the weather: precipitation now only while it is
   raining or snowing, the umbrella and tomorrow's mm only when precipitation tomorrow is likely
-  enough. A normal day looks like the first screenshot.
+  enough. A normal day looks like the screenshot at the start of this section.
 - **Font size.** The middle and bottom rows use a larger font while everything fits and a
   slightly smaller one when the values get long.
 - **Bottom row spacing.** When the bottom row gets crowded, its left half moves a little to the
@@ -200,7 +203,7 @@ other phones change the action of the "Ярлык Часов" element in KWGT).
 |---|---|
 | `umbrella_min` | Umbrella threshold: chance of precipitation tomorrow, %. Preset: 60; 0 means 70 |
 | `umbrella_test` | Always show the umbrella (to check how it looks) |
-| `maximal` | Fill every row with its longest value, to check for overlaps (second screenshot) |
+| `maximal` | Fill every row with its longest value, to check for overlaps (screenshot in the spoiler) |
 | `precip_test` | Show both precipitation blocks and the umbrella with a given icon: 0 real data, 1 rain, 2 snow, 3 sleet |
 
 Older versions of the widget are in [`widget/archive`](widget/archive).
