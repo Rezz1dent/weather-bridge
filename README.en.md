@@ -40,14 +40,6 @@ screen; its launcher icon can be hidden (see [Install](#install)).
 
 ### Install
 
-> [!TIP]
-> The bridge works in the background; its icon is only needed for the setup. Afterwards you can
-> remove it with **Hide icon from launcher** on the bridge's screen. The screen then opens from
-> Android **Settings → Apps → Weather Bridge** → the gear / **App settings** button (the name
-> depends on the phone), where you can also bring the icon back. The icon disappears completely
-> after the launcher or the phone restarts; until then a shortcut to the app info page may stay
-> in its place.
-
 1. Download `weather-bridge-*.apk` from [Releases](../../releases), install it and open
    **Weather Bridge** from the app drawer.
 2. Tap **Allow access to Breezy Weather**.
@@ -56,6 +48,10 @@ screen; its launcher icon can be hidden (see [Install](#install)).
 4. Turn off battery restrictions for Weather Bridge and Breezy Weather (button in the app), so
    background updates are not blocked.
 5. Refresh the weather in Breezy, or tap **Read Breezy data and send to KWGT**.
+6. Optional: tap **Hide icon from launcher**. The bridge works in the background, the icon is
+   only needed for the setup. Without it, the bridge's screen opens from Android
+   **Settings → Apps → Weather Bridge → App settings** (or a gear, depending on the phone),
+   where the icon can be brought back.
 
 The bridge's screen shows the setup steps, the permission and data status, and every variable
 with its latest value; tap one to copy its formula. Interface: English or Russian (switch in the
@@ -144,6 +140,9 @@ completely, reopen its settings and enable the bridge again.
 
 **The widget shows old data.** Check battery restrictions (step 4) and the "Data received"
 time on the bridge's screen.
+
+**After hiding the icon, a shortcut to the app info page stays in its place.** Android puts it
+there until the launcher restarts. Restart the phone and it disappears.
 
 ## Example: Breezy Minimal widget
 
