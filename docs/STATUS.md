@@ -17,7 +17,9 @@ Russian.
   APK on pushes to `main` (artifact `weather-bridge-apk`) and publishes the GitHub release
   `v<versionName>` when that version has none yet (APK + current preset, notes from
   `docs/release-notes/v<version>.md`). Tag pushes from the cloud session are blocked by its proxy,
-  hence this. To release: bump `versionName`/`versionCode`, add the notes file, push.
+  hence this. To release: bump `versionName`/`versionCode`, add the notes file, push. A new
+  preset in `widget/` (file name `…_vNN_…`) gets its own release `widget-N.N` the same way
+  (notes `docs/release-notes/widget-N.N.md`).
 - **KWGT preset** "Breezy Minimal" (`widget/`, older versions in `widget/archive/`): clock +
   Breezy weather, Manrope fonts, Material Design Icons via KWGT's built-in Iconify set.
 
@@ -26,12 +28,13 @@ Docs: `README.md` / `README.ru.md` (setup, variables, credits), `docs/TODO.md`,
 before editing presets). Preset build scripts in `scripts/` (abandoned ones in
 `scripts/archive/`).
 
-## Current widget: v7.6 (`widget/Breezy_Minimal_v76__Manrope.kwgt`)
+## Current widget: v7.7 (`widget/Breezy_Minimal_v77__Manrope.kwgt`)
 
 Built by a chain of scripts from the owner's hand-tuned exports:
 `v70` (exported from the phone) → `build_v71_preset.py` → `build_v72_preset.py` → owner's
 hand-tuned `v73` (exported; sizes: middle row 22, bottom row 18) → `build_v73_preset.py`
-(alarm icon) = `v74` → `build_v75_preset.py` (automatic row sizes) = `v75` → `build_v76_preset.py` (rain / snow / mix icons) = `v76`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
+(alarm icon) = `v74` → `build_v75_preset.py` (automatic row sizes) = `v75` → `build_v76_preset.py` (rain / snow / mix icons) = `v76` → `build_v77_preset.py` (crowded rows
+move apart: with the small font the left groups shift 8 units left, the right ones 8 right) = `v77`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
 `Manrope[wght].ttf` from google/fonts; static weights, tabular clock digits, narrow minus,
 spacer glyphs in `Manrope-Light-Spaced`).
 
