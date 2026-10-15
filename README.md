@@ -97,7 +97,7 @@ Taps: the weather area opens Breezy Weather; the clock opens the clock app of Co
 | `maximal` | Fill every row with its longest value, to check for overlaps |
 | `precip_test` | Show the precipitation blocks with a given icon: 0 real data, 1 rain, 2 snow, 3 sleet |
 
-With `maximal` on (every row at its longest, smaller font):
+With `maximal` on (every row at its longest, smaller font; the bottom row moves its halves apart):
 
 ![maximal](docs/images/widget-maximal.jpg)
 
