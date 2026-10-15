@@ -146,7 +146,7 @@ It shows how the variables can be used, and works as is once the bridge is set u
 ![Breezy Minimal on the home screen](docs/images/widget.jpg)
 
 <details>
-<summary><b>The same widget at its limit</b>: the longest values, plus every element that is usually hidden (precipitation now, the umbrella and tomorrow's precipitation). This is the <code>maximal</code> switch; click to expand</summary>
+<summary><b>The same widget at its limit</b>: the longest values, plus every element that is usually hidden (precipitation now, the umbrella and tomorrow's precipitation). To see the widget like this on your phone, it has a global switch <code>maximal</code> (KWGT → Globals)</summary>
 <br>
 
 ![Breezy Minimal with the longest values and the hidden elements shown](docs/images/widget-maximal.jpg)
