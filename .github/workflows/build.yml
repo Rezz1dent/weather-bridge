@@ -52,12 +52,13 @@ jobs:
           "$AAPT" dump badging "$APK" > badging.txt 2> badging-errors.txt || true
           [ -s badging-errors.txt ] && echo "::warning::aapt2: $(head -c 300 badging-errors.txt | tr '\n' ' ')"
           grep -q "package: name='com.rezz1dent.weatherbridge'" badging.txt || fail "package name"
-          grep -q 'launchable-activity:' badging.txt \
-            || fail "the app must install with a launcher icon (it can hide it itself)"
           grep -q "application-label:'Weather Bridge'" badging.txt || fail "application label"
           "$AAPT" dump xmltree --file AndroidManifest.xml "$APK" > manifest.txt || fail "manifest dump"
           grep -q 'org.breezyweather.ACTION_UPDATE_NOTIFIER' manifest.txt || fail "update notifier receiver"
           grep -q 'org.breezyweather.READ_PROVIDER' manifest.txt || fail "provider permission"
+          # The launcher icon is an activity-alias, which badging does not list as launchable.
+          grep -q 'activity-alias' manifest.txt && grep -q 'android.intent.category.LAUNCHER' manifest.txt \
+            || fail "the app must install with a launcher icon (it can hide it itself)"
           APKSIGNER=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -n1)
           "$APKSIGNER" verify --print-certs "$APK" > certs.txt || fail "signature"
           if [ -n "$SIGNING_KEYSTORE" ] && grep -q 'CN=Android Debug' certs.txt; then
