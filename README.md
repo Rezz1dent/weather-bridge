@@ -158,7 +158,7 @@ It shows how the variables can be used, and works as is once the bridge is set u
    open it again; if that does not help, restart the phone. This is normally needed only once,
    after the first import.
 
-### Legend
+### Description
 
 Everything the widget can show, here with the test values of the `maximal` switch:
 
