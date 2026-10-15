@@ -178,7 +178,8 @@ time on the bridge's screen.
 
 GitHub Actions builds the APK on every push (artifact `weather-bridge-apk`). When `main` gets a
 new `versionName`, it publishes the release `v<version>` with the APK and the current widget,
-and a new widget version gets its own release `widget-<version>` (notes in `docs/release-notes/`). Releases are signed with the owner's key from the repository secrets
+and a new widget version gets its own release `widget-<version>` (notes in `docs/release-notes/`).
+Releases are signed with the owner's key from the repository secrets
 `SIGNING_KEYSTORE_BASE64` (the keystore, base64) and `SIGNING_PASSWORD` (key alias
 `weatherbridge`). Without them, e.g. in a fork, the APK is signed with a throwaway debug key and
 Android will not update it in place.
