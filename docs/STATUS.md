@@ -14,8 +14,10 @@ Russian.
   permission) when Breezy's "Update Notifier" broadcast arrives, and sends ~40 variables to
   KWGT as `$br(breezy, name)$` (the KWGT extension name stays `breezy`, the presets use it).
   Current version **2.0** (versionCode 12). GitHub Actions workflow "Build" builds the release
-  APK on pushes to `main` (artifact `weather-bridge-apk`) and publishes a GitHub release for
-  tags `v*` (APK + current preset, notes from `docs/release-notes/<tag>.md`).
+  APK on pushes to `main` (artifact `weather-bridge-apk`) and publishes the GitHub release
+  `v<versionName>` when that version has none yet (APK + current preset, notes from
+  `docs/release-notes/v<version>.md`). Tag pushes from the cloud session are blocked by its proxy,
+  hence this. To release: bump `versionName`/`versionCode`, add the notes file, push.
 - **KWGT preset** "Breezy Minimal" (`widget/`, older versions in `widget/archive/`): clock +
   Breezy weather, Manrope fonts, Material Design Icons via KWGT's built-in Iconify set.
 
