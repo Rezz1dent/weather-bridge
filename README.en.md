@@ -8,12 +8,12 @@
 not use your location: Breezy fetches the weather, the bridge only forwards it. As an example,
 the repository includes **Breezy Minimal**, a KWGT widget built on these variables.
 
-<img src="docs/images/bridge-en.jpg" width="300" alt="Weather Bridge screen">
+<p align="center"><img src="docs/images/bridge-en.jpg" width="300" alt="Weather Bridge screen"></p>
 
 > Independent, unofficial project. Not affiliated with Breezy Weather or Kustom Industries.
 
 **Contents:** [**Download**](https://github.com/Rezz1dent/weather-bridge/releases) · [Weather Bridge](#weather-bridge) · [Variables](#variables) ·
-[Example: Breezy Minimal widget](#example-breezy-minimal-widget) · [Build](#build) ·
+[Usage example: Breezy Minimal](#usage-example-breezy-minimal) · [Build](#build) ·
 [Credits and license](#credits-and-license)
 
 ## Weather Bridge
@@ -138,7 +138,7 @@ time on the bridge's screen.
 **After hiding the icon, a shortcut to the app info page stays in its place.** Android puts it
 there until the launcher restarts. Restart the phone and it disappears.
 
-## Example: Breezy Minimal widget
+## Usage example: Breezy Minimal
 
 A KWGT widget made for the bridge: one look at the time, the weather now, today and tomorrow.
 It shows how the variables can be used, and works as is once the bridge is set up.
@@ -146,10 +146,10 @@ It shows how the variables can be used, and works as is once the bridge is set u
 ![Breezy Minimal on the home screen](docs/images/widget.jpg)
 
 <details>
-<summary><b>The same widget with every element</b> (<code>maximal</code> switch, click to expand)</summary>
+<summary><b>The same widget at its limit</b>: the longest values, plus every element that is usually hidden (precipitation now, the umbrella and tomorrow's precipitation). This is the <code>maximal</code> switch; click to expand</summary>
 <br>
 
-![Breezy Minimal with every element](docs/images/widget-maximal.jpg)
+![Breezy Minimal with the longest values and the hidden elements shown](docs/images/widget-maximal.jpg)
 
 </details>
 
@@ -165,8 +165,7 @@ It shows how the variables can be used, and works as is once the bridge is set u
 
 ### Description
 
-Everything the widget can show. The examples are the test values of the `maximal` switch (the
-screenshot with every element is in the spoiler at the start of this section).
+Everything the widget can show. The examples are the test values of the `maximal` switch (screenshot in the spoiler at the start of this section).
 
 | Row | Element | Meaning | Source | Shown |
 |---|---|---|---|---|
