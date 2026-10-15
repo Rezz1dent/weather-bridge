@@ -88,6 +88,7 @@ take ~14% more than nominal; the estimate is deliberately on the wide side.
   `precip_test` 1-3 (`snowflake-melt` is a newer MDI icon). If the size switch comes too early
   or too late, tune the coefficients or `FIT` in `build_v75_preset.py`.
 - Possible upstream issue for Breezy: add its own `ACTION_UPDATE_NOTIFIER` to `<queries>`.
-- Release signing: without the `SIGNING_*` secrets CI signs with a throwaway key, so updates
-  need uninstalling first. Owner's signing key: see the README "Build" section.
+- Release signing: owner's key (PKCS12, alias `weatherbridge`, created 2026-10-15, SHA-256
+  96:96:16:0B:…:44:91:07), kept by the owner; CI reads the secrets `SIGNING_KEYSTORE_BASE64` and
+  `SIGNING_PASSWORD`. Without them CI signs with a throwaway key (updates need uninstalling).
 - Add a screenshot of the widget to the README.

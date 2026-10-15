@@ -138,9 +138,10 @@ time on the bridge's screen.
 ```
 
 GitHub Actions builds the APK on every push (artifact `weather-bridge-apk`) and publishes a
-release for tags `v*`. Without signing secrets the APK is signed with a throwaway key, and
-Android will not update it in place; set `SIGNING_KEYSTORE_BASE64`, `SIGNING_STORE_PASSWORD`,
-`SIGNING_KEY_ALIAS` and `SIGNING_KEY_PASSWORD` to sign with your own key.
+release for tags `v*`. Releases are signed with the owner's key from the repository secrets
+`SIGNING_KEYSTORE_BASE64` (the keystore, base64) and `SIGNING_PASSWORD` (key alias
+`weatherbridge`). Without them, e.g. in a fork, the APK is signed with a throwaway debug key and
+Android will not update it in place.
 
 ## Repository
 

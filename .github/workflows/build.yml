@@ -40,9 +40,9 @@ jobs:
 
       - name: Build
         env:
-          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
-          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
+          SIGNING_KEY_ALIAS: weatherbridge
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
         run: bash ./gradlew :app:assembleRelease --no-daemon
 
       - name: Check the APK
