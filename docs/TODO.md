@@ -35,3 +35,17 @@
 - [x] **Rain / snow / mix.** (done in 1.8) Send the kind of precipitation now and tomorrow
   (`precip_now_type`, `tomorrow_precip_type`: rain / snow / mix) and a matching MDI icon
   (`water-outline`, `snowflake`, `snowflake-melt`), so the widget can swap the drop.
+
+## Launcher icon
+
+- [ ] **Install with a launcher icon, hide it from the app.** The bridge should install with a
+  normal launcher icon (easy to find right after installing), and its screen gets a button
+  "Hide icon from launcher" / «Скрыть иконку из лаунчера» that turns it into what it is now: no
+  launcher icon, opened from Android Settings → Apps → Weather Bridge → App settings. Probably
+  an `<activity-alias>` with the LAUNCHER category, switched by
+  `PackageManager.setComponentEnabledSetting`; the button should become "Show icon" when the
+  icon is hidden. Update the README ("no launcher icon" note), the setup text in the app and the
+  CI check that currently fails when the APK has a launchable activity.
+
+- [ ] **New app icon.** The current one (drawn by ChatGPT) is a bit uneven: arrow, off-centre
+  cloud. Owner keeps the colour palette; drafts A/B/C were offered on 2026-10-15.
