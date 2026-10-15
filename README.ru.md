@@ -1,5 +1,7 @@
 # Weather Bridge для KWGT
 
+[English](README.md) · **Русский**
+
 **Weather Bridge** — маленькое Android-приложение, которое передаёт прогноз из
 [Breezy Weather](https://github.com/breezy-weather/breezy-weather) в
 [KWGT](https://kustom.rocks/) готовыми переменными. Оно не ходит в интернет и не использует
@@ -9,8 +11,6 @@
 ![Breezy Minimal на рабочем столе](docs/images/widget.jpg)
 
 > Независимый неофициальный проект. Не связан с Breezy Weather и Kustom Industries.
-
-[English version](README.md)
 
 **Содержание:** [Weather Bridge](#weather-bridge) · [Переменные](#переменные) ·
 [Пример: виджет Breezy Minimal](#пример-виджет-breezy-minimal) · [Сборка](#сборка) ·
@@ -55,8 +55,14 @@ Breezy Weather ──(оповещение об обновлении)──▶ W
    чтобы система не блокировала обновления в фоне.
 5. Обновите погоду в Breezy или нажмите **«Получить данные Breezy и передать в KWGT»**.
 
-На экране моста есть список всех переменных; нажатие копирует формулу. Язык интерфейса —
-английский или русский (переключатель в правом верхнем углу).
+На экране моста — шаги настройки, состояние доступа и данных и список всех переменных с
+последними значениями; нажатие копирует формулу. Язык интерфейса — английский или русский
+(переключатель в правом верхнем углу).
+
+<p>
+  <img src="docs/images/bridge-ru.jpg" width="300" alt="Экран Weather Bridge, русский">
+  <img src="docs/images/bridge-en.jpg" width="300" alt="Экран Weather Bridge, английский">
+</p>
 
 ### Переменные
 
