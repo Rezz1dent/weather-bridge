@@ -20,9 +20,9 @@ Russian.
   hence this. To release: bump `versionName`/`versionCode`, add the notes file, push. A new
   preset in `widget/` (file name `…_vNN_…`) gets its own release `widget-N.N` the same way
   (notes `docs/release-notes/widget-N.N.md`).
-  Release notes are bilingual (Russian first, then English); editing a notes file on `main`
-  updates the existing release's description (workflow "Release notes"; the cloud session itself
-  may not edit releases).
+  Release notes: Russian first, then English (owner's wish, from 2026-10-15 on). The cloud
+  session may not edit existing releases, and the owner does not want a separate workflow for
+  that.
 - **KWGT preset** "Breezy Minimal" (`widget/`, older versions in `widget/archive/`): clock +
   Breezy weather, Manrope fonts, Material Design Icons via KWGT's built-in Iconify set.
 
