@@ -28,7 +28,8 @@ Breezy Weather ──(Update Notifier broadcast)──▶ Weather Bridge ──(
 
 Every time Breezy refreshes the weather it notifies the bridge; the bridge reads Breezy's
 weather ContentProvider and sends about 40 variables to KWGT. Day/night icons switch at
-sunrise and sunset even without a refresh.
+sunrise and sunset even without a refresh. The bridge has no launcher icon and no
+notifications; it only has a settings screen (see [Install](#install)).
 
 ### Requirements
 
@@ -39,9 +40,14 @@ sunrise and sunset even without a refresh.
 
 ### Install
 
-1. Download `weather-bridge-*.apk` from [Releases](../../releases) and install it.
-   The app has **no launcher icon** on purpose: open it from
-   **Settings → Apps → Weather Bridge → Open app settings** (or the gear on its app info page).
+> [!IMPORTANT]
+> **The bridge has no icon in the app drawer or on the home screen** — on purpose, it works in
+> the background. To open its screen (permission, variables, status), go to Android
+> **Settings → Apps → Weather Bridge** and tap the gear / **App settings** button on its app
+> info page (the name of the button depends on the phone).
+
+1. Download `weather-bridge-*.apk` from [Releases](../../releases), install it and open its
+   screen as described above.
 2. Tap **Allow access to Breezy Weather**.
 3. In Breezy Weather: **Settings → Widgets & live wallpapers → Send weather data to Breezy
    Weather Update Notifier** → enable **Weather Bridge**.
