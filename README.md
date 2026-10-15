@@ -1,6 +1,6 @@
 # Weather Bridge для KWGT
 
-[English](README.en.md) · **Русский**
+**Русский** · [English](README.en.md)
 
 **Weather Bridge** — маленькое Android-приложение, которое передаёт прогноз из
 [Breezy Weather](https://github.com/breezy-weather/breezy-weather) в
