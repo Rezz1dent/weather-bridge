@@ -23,7 +23,7 @@ Russian.
 - **KWGT preset** "Breezy Minimal" (`widget/`, older versions in `widget/archive/`): clock +
   Breezy weather, Manrope fonts, Material Design Icons via KWGT's built-in Iconify set.
 
-Docs: `README.md` / `README.ru.md` (setup, variables, credits), `docs/TODO.md`,
+Docs: `README.md` (Russian, shown by default) / `README.en.md` (English) (setup, variables, credits), `docs/TODO.md`,
 `docs/KWGT_NOTES.md` (KWGT file format, Kode formulas, lessons learned on the phone — read it
 before editing presets). Preset build scripts in `scripts/` (abandoned ones in
 `scripts/archive/`).
