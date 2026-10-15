@@ -176,7 +176,7 @@ Everything the widget can show. The examples are the test values of the `maximal
 | middle | ↖ 12,5 м/с | Wind: the arrow points where the wind blows, speed in m/s | `wind_arrow`, `wind_ms` | always |
 | middle | 💧 12,5 | Precipitation now, mm (current hour). Icon: drop = rain, snowflake = snow, snowflake with a drop = sleet | `precip_now`, `precip_now_icon` | **only while it rains or snows** |
 | middle | 👤 -42° | Feels like | `like` | always |
-| bottom | ⏰ 20:08 (пн) | Next alarm and its weekday; crossed-out icon and "—" when none is set | phone | always |
+| bottom | ⏰ 20:08 (пн) | Next alarm and its weekday; only a crossed-out icon when none is set | phone | always |
 | bottom | 🌇 22:58 | Next sunset by day, next sunrise by night | KWGT, your location | always |
 | bottom | -35/-42° | Today: high/low | `today_range` | always |
 | bottom | 📅 -35/-42° | Tomorrow: high/low | `tomorrow_compact` | always |
