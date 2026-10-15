@@ -9,6 +9,8 @@ The repository also contains **Breezy Minimal**, a KWGT widget built on these va
 a large clock, temperature and weather icon, then date, wind, precipitation, feels-like, next
 alarm, sunrise/sunset and the forecast for today and tomorrow.
 
+![Breezy Minimal on the home screen](docs/images/widget.jpg)
+
 > Independent, unofficial project. Not affiliated with Breezy Weather or Kustom Industries.
 
 [Русская версия](README.ru.md)
@@ -60,6 +62,10 @@ Russian (switch in the top-right corner).
 | `umbrella_test` | Always show the umbrella (test) |
 | `maximal` | Fill every row with its longest value, to check for overlaps |
 | `precip_test` | Precipitation icon test: 0 real data, 1 rain, 2 snow, 3 sleet |
+
+With `maximal` on (every row at its longest, smaller font):
+
+![maximal](docs/images/widget-maximal.jpg)
 
 Rows pick a larger font when the values fit and a smaller one when they would overlap.
 Older versions are in [`widget/archive`](widget/archive).

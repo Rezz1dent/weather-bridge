@@ -93,4 +93,3 @@ take ~14% more than nominal; the estimate is deliberately on the wide side.
 - Release signing: owner's key (PKCS12, alias `weatherbridge`, created 2026-10-15, SHA-256
   96:96:16:0B:…:44:91:07), kept by the owner; CI reads the secrets `SIGNING_KEYSTORE_BASE64` and
   `SIGNING_PASSWORD`. Without them CI signs with a throwaway key (updates need uninstalling).
-- Add a screenshot of the widget to the README.
