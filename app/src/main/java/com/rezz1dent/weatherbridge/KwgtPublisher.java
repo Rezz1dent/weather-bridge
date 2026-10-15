@@ -1,4 +1,4 @@
-package com.leanbitlab.breezybridge;
+package com.rezz1dent.weatherbridge;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,8 +17,8 @@ import java.util.Map;
  */
 public final class KwgtPublisher {
     public static final String EXT = "breezy";
-    private static final String TAG = "BreezyKwgt";
-    static final String PREFS = "breezy_bridge";
+    private static final String TAG = "WeatherBridge";
+    static final String PREFS = "weather_bridge";
     static final String CACHE_KEY = "last_json";
     static final String CACHE_TIME_KEY = "last_time";
     static final String[] KEYS = {

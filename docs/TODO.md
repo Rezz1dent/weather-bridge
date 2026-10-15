@@ -1,9 +1,9 @@
-# Breezy Bridge — TODO
+# Weather Bridge — TODO
 
 ## Settings screen
 
 - [x] **Language switch in the top-right corner.** (done in 1.5) Replace the "Language" dropdown at the bottom
-  with a small rectangle on the same row as the "Breezy Bridge" title, aligned right, showing the
+  with a small rectangle on the same row as the "Weather Bridge" title, aligned right, showing the
   current language ("EN"). Tapping it opens a short dropdown with "EN / RU". English stays the
   default.
 
@@ -14,8 +14,8 @@
   Replace the short intro ("grant access, then refresh the forecast") with numbered steps:
   1. Allow access to Breezy Weather (button below).
   2. In Breezy Weather: Settings → Widgets & live wallpapers → "Send weather data to Breezy
-     Weather Update Notifier" → enable Breezy Bridge.
-  3. Turn off battery restrictions for Breezy Bridge (and Breezy Weather) in the system settings,
+     Weather Update Notifier" → enable Weather Bridge.
+  3. Turn off battery restrictions for Weather Bridge (and Breezy Weather) in the system settings,
      so updates are not blocked in the background; ideally a button that opens that screen.
   4. Refresh the weather in Breezy Weather (or tap "Read Breezy data and send to KWGT").
   If Breezy does not list the bridge in step 2: tap "Read Breezy data and send to KWGT", close

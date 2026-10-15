@@ -3,9 +3,9 @@
 
 Usage: build_v71_preset.py BASE_v70.kwgt FONTS_DIR OUT.kwgt
 
-Starts from the hand-tuned v70 (presets/Breezy_Minimal_v70__Manrope.kwgt):
+Starts from the hand-tuned v70 (widget/archive/Breezy_Minimal_v70__Manrope.kwgt):
 - the wind row becomes a stack: wind | drop icon + mm (only while it rains, from the
-  bridge's precip_now, Breezy Bridge 1.6+) | like;
+  bridge's precip_now, bridge 1.6+) | like;
 - the temperature uses Manrope-Regular (same weight as v70's Manrope.ttf, with the
   narrow minus);
 - fonts refreshed from FONTS_DIR (make_manrope_fonts.py).

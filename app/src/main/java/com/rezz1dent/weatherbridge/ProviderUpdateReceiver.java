@@ -1,4 +1,4 @@
-package com.leanbitlab.breezybridge;
+package com.rezz1dent.weatherbridge;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

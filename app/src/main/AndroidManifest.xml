@@ -15,7 +15,7 @@
         android:allowBackup="false"
         android:supportsRtl="true">
         <activity
-            android:name="com.leanbitlab.breezybridge.MainActivity"
+            android:name="com.rezz1dent.weatherbridge.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES"/>
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <receiver
-            android:name="com.leanbitlab.breezybridge.ProviderUpdateReceiver"
+            android:name="com.rezz1dent.weatherbridge.ProviderUpdateReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="org.breezyweather.ACTION_UPDATE_NOTIFIER"/>
@@ -31,7 +31,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.leanbitlab.breezybridge.BootReceiver"
+            android:name="com.rezz1dent.weatherbridge.BootReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
@@ -39,7 +39,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.leanbitlab.breezybridge.DaylightScheduler"
+            android:name="com.rezz1dent.weatherbridge.DaylightScheduler"
             android:exported="false" />
     </application>
 </manifest>

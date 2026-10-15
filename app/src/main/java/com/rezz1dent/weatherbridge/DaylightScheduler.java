@@ -1,4 +1,4 @@
-package com.leanbitlab.breezybridge;
+package com.rezz1dent.weatherbridge;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -14,7 +14,7 @@ import org.json.JSONObject;
  * Inexact but allowed while idle: no exact-alarm permission, a few minutes of delay is fine.
  */
 public final class DaylightScheduler extends BroadcastReceiver {
-    private static final String TAG = "BreezyKwgt";
+    private static final String TAG = "WeatherBridge";
     // Fire shortly after the hour starts, so the hourly flag has already flipped.
     private static final long DELAY_MILLIS = 60_000L;
 

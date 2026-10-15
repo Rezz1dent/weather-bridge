@@ -1,26 +1,30 @@
-# Breezy Bridge + KWGT widget — project status
+# Weather Bridge + KWGT widget — project status
 
-Snapshot for picking the work up in a new session. Everything lives on branch
-`feature/breezy-bridge-v2` of `Rezz1dent/Lwidget` (the rest of the repo is the old Lwidget
-fork, not used any more). Conversation with the owner is in Russian.
+Snapshot for picking the work up in a new session. Repository: `Rezz1dent/weather-bridge`,
+branch `main` (moved out of the old `Rezz1dent/Lwidget` fork in October 2026; history keeps only
+this project's commits, paths rewritten to the layout below). Conversation with the owner is in
+Russian.
 
 ## What it is
 
-- **Breezy Bridge** (`bridge/`, Android, Java, no launcher icon, package
+- **Weather Bridge** (`app/`, Android, Java, no dependencies, no launcher icon, package and
+  namespace `com.rezz1dent.weatherbridge`; until 1.8 it was "Breezy Bridge",
   `com.rezz1dent.breezykwgtbridge`): reads Breezy Weather's ContentProvider
   (`org.breezyweather.provider.weather`, needs Breezy 6.1+ and the `READ_PROVIDER`
-  permission) when Breezy's "Update Notifier" broadcast arrives, and sends ~35 variables to
-  KWGT as `$br(breezy, name)$`. Current version **1.8** (versionCode 11). APK is built by the
-  GitHub Actions workflow "Breezy Bridge APK" on every push to `bridge/**`
-  (artifact `breezy-bridge-debug`).
-- **KWGT preset** "Breezy Minimal" (`presets/`): clock + Breezy weather, Manrope fonts,
-  Material Design Icons via KWGT's built-in Iconify set.
+  permission) when Breezy's "Update Notifier" broadcast arrives, and sends ~40 variables to
+  KWGT as `$br(breezy, name)$` (the KWGT extension name stays `breezy`, the presets use it).
+  Current version **2.0** (versionCode 12). GitHub Actions workflow "Build" builds the release
+  APK on pushes to `main` (artifact `weather-bridge-apk`) and publishes a GitHub release for
+  tags `v*` (APK + current preset, notes from `docs/release-notes/<tag>.md`).
+- **KWGT preset** "Breezy Minimal" (`widget/`, older versions in `widget/archive/`): clock +
+  Breezy weather, Manrope fonts, Material Design Icons via KWGT's built-in Iconify set.
 
-Docs in the repo: `bridge/README.md` (setup, variables, credits), `bridge/TODO.md`,
-`presets/KWGT_NOTES.md` (KWGT file format, Kode formulas, lessons learned on the phone —
-read it before editing presets).
+Docs: `README.md` / `README.ru.md` (setup, variables, credits), `docs/TODO.md`,
+`docs/KWGT_NOTES.md` (KWGT file format, Kode formulas, lessons learned on the phone — read it
+before editing presets). Preset build scripts in `scripts/` (abandoned ones in
+`scripts/archive/`).
 
-## Current widget: v7.6 (`presets/Breezy_Minimal_v76__Manrope.kwgt`)
+## Current widget: v7.6 (`widget/Breezy_Minimal_v76__Manrope.kwgt`)
 
 Built by a chain of scripts from the owner's hand-tuned exports:
 `v70` (exported from the phone) → `build_v71_preset.py` → `build_v72_preset.py` → owner's
@@ -80,8 +84,10 @@ take ~14% more than nominal; the estimate is deliberately on the wide side.
 
 ## Open / ideas
 
-- Check v7.5 on the phone: big sizes with short values, switch to small with long ones /
-  `maximal`. If the switch comes too early or too late, tune the coefficients or `FIT`.
+- Automatic row sizes work on the phone (v7.5). Check v7.6's precipitation icons with
+  `precip_test` 1-3 (`snowflake-melt` is a newer MDI icon). If the size switch comes too early
+  or too late, tune the coefficients or `FIT` in `build_v75_preset.py`.
 - Possible upstream issue for Breezy: add its own `ACTION_UPDATE_NOTIFIER` to `<queries>`.
-- Publishing the bridge: rename to something neutral (e.g. "Weather Bridge for KWGT"),
-  keep "unofficial" note; MDI icons are Apache-2.0, Manrope OFL (`presets/Manrope-OFL.txt`).
+- Release signing: without the `SIGNING_*` secrets CI signs with a throwaway key, so updates
+  need uninstalling first. Owner's signing key: see the README "Build" section.
+- Add a screenshot of the widget to the README.

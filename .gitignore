@@ -1,0 +1,16 @@
+# Gradle / Android Studio
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+
+# Build outputs and signing keys
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Python
+__pycache__/

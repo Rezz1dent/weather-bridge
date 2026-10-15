@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Breezy Bridge</string>
-    <string name="intro_caption">Передача погоды из Breezy Weather в KWGT без интернета и геолокации.\n1. Разреши доступ к данным Breezy (кнопка ниже).\n2. В Breezy Weather: Настройки → Виджеты и живые обои → «Отправить данные о погоде в Breezy Weather Оповеститель обновления местоположений» → включи Breezy Bridge.\n3. Сними ограничения по батарее для Breezy Bridge и Breezy Weather (кнопка ниже), чтобы система не блокировала обновления в фоне.\n4. Обнови погоду в Breezy Weather или нажми «Получить данные Breezy и передать в KWGT».\nЕсли на шаге 2 Breezy не видит мост: нажми «Получить данные Breezy и передать в KWGT», полностью закрой Breezy и открой его настройки снова.</string>
+    <string name="app_name">Weather Bridge</string>
+    <string name="intro_caption">Передача погоды из Breezy Weather в KWGT без интернета и геолокации.\n1. Разреши доступ к данным Breezy (кнопка ниже).\n2. В Breezy Weather: Настройки → Виджеты и живые обои → «Отправить данные о погоде в Breezy Weather Оповеститель обновления местоположений» → включи Weather Bridge.\n3. Сними ограничения по батарее для Weather Bridge и Breezy Weather (кнопка ниже), чтобы система не блокировала обновления в фоне.\n4. Обнови погоду в Breezy Weather или нажми «Получить данные Breezy и передать в KWGT».\nЕсли на шаге 2 Breezy не видит мост: нажми «Получить данные Breezy и передать в KWGT», полностью закрой Breezy и открой его настройки снова.</string>
     <string name="grant_button">Разрешить доступ к Breezy</string>
     <string name="grant_done">Доступ к Breezy получен</string>
     <string name="resend_button">Получить данные Breezy и передать в KWGT</string>
