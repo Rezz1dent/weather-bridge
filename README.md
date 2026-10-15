@@ -12,7 +12,7 @@
 
 > Независимый неофициальный проект. Не связан с Breezy Weather и Kustom Industries.
 
-**Содержание:** [Weather Bridge](#weather-bridge) · [Переменные](#переменные) ·
+**Содержание:** [**Скачать**](https://github.com/Rezz1dent/weather-bridge/releases) · [Weather Bridge](#weather-bridge) · [Переменные](#переменные) ·
 [Пример: виджет Breezy Minimal](#пример-виджет-breezy-minimal) · [Сборка](#сборка) ·
 [Благодарности и лицензия](#благодарности-и-лицензия)
 

@@ -12,7 +12,7 @@ the repository includes **Breezy Minimal**, a KWGT widget built on these variabl
 
 > Independent, unofficial project. Not affiliated with Breezy Weather or Kustom Industries.
 
-**Contents:** [Weather Bridge](#weather-bridge) · [Variables](#variables) ·
+**Contents:** [**Download**](https://github.com/Rezz1dent/weather-bridge/releases) · [Weather Bridge](#weather-bridge) · [Variables](#variables) ·
 [Example: Breezy Minimal widget](#example-breezy-minimal-widget) · [Build](#build) ·
 [Credits and license](#credits-and-license)
 
