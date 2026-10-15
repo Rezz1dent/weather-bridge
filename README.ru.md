@@ -59,10 +59,11 @@ Breezy Weather ──(оповещение об обновлении)──▶ W
 последними значениями; нажатие копирует формулу. Язык интерфейса — английский или русский
 (переключатель в правом верхнем углу).
 
-<p>
-  <img src="docs/images/bridge-ru.jpg" width="300" alt="Экран Weather Bridge, русский">
-  <img src="docs/images/bridge-en.jpg" width="300" alt="Экран Weather Bridge, английский">
-</p>
+<details>
+<summary><b>Скриншот моста</b> (нажмите, чтобы раскрыть)</summary>
+<br>
+<img src="docs/images/bridge-ru.jpg" width="320" alt="Экран Weather Bridge">
+</details>
 
 ### Переменные
 

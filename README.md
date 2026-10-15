@@ -59,10 +59,11 @@ The bridge's screen shows the setup steps, the permission and data status, and e
 with its latest value; tap one to copy its formula. Interface: English or Russian (switch in the
 top-right corner).
 
-<p>
-  <img src="docs/images/bridge-en.jpg" width="300" alt="Weather Bridge screen, English">
-  <img src="docs/images/bridge-ru.jpg" width="300" alt="Weather Bridge screen, Russian">
-</p>
+<details>
+<summary><b>Screenshot of the bridge</b> (click to expand)</summary>
+<br>
+<img src="docs/images/bridge-en.jpg" width="320" alt="Weather Bridge screen">
+</details>
 
 ### Variables
 

@@ -47,5 +47,5 @@
   icon is hidden. Update the README ("no launcher icon" note), the setup text in the app and the
   CI check that currently fails when the APK has a launchable activity.
 
-- [ ] **New app icon.** The current one (drawn by ChatGPT) is a bit uneven: arrow, off-centre
-  cloud. Owner keeps the colour palette; drafts A/B/C were offered on 2026-10-15.
+- [x] **New app icon.** Drafts A/B/C were offered on 2026-10-15; the owner decided to keep the
+  current icon. Do not change it.
