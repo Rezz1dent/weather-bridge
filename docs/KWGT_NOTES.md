@@ -92,6 +92,10 @@ spacing. Workaround used in v51: our own font with empty **spacer glyphs** of ex
 ```
 
 Read in formulas with `gv(name)`; bind a property with toggle `100` + `internal_globals`.
+
+**Global folders and descriptions: do not use.** The owner tried (2026-10-15): a global copied into
+a folder stops working (formulas keep pointing at the old one), and adding a description through
+"edit" creates a new global that the formulas do not use. Globals stay flat, with titles only.
 `NUMBER` is assumed to follow the same shape with `"value"`.
 
 ## Kode (formulas) essentials
