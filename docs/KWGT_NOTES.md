@@ -12,7 +12,8 @@ build container; summaries via search), [Kustom forum](https://forum.kustom.rock
 ## Lessons learned on the device (verified)
 
 - **Fonts bundled in the preset** (`fonts/*.ttf`, `kfile://org.kustom.provider/fonts/…`) work on the
-  home screen only **after a reboot** the first time; the editor shows them immediately.
+  home screen only after **KWGT is force-stopped and reopened** (or, failing that, a reboot) the
+  first time; the editor shows them immediately.
 - **Icon fonts bundled in the preset** (`icons/x.ttf` + `x.json`, IcoMoon) did **not** work on the home
   screen ("?" or a wrong glyph), even though the editor drew them. The old Meteo icons only worked
   because Meteo is **built into KWGT**. Use built-in sets instead:

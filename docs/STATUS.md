@@ -76,7 +76,8 @@ take ~14% more than nominal; the estimate is deliberately on the wide side.
 - **Icons**: icon fonts bundled in a preset did not work on the home screen ("?"); only
   KWGT built-in sets work → Iconify `iconify://mdi?name=Material%20Design%20Icons`.
 - **Fonts** bundled in the preset (`fonts/*.ttf`) work, but the home screen needs **one phone
-  reboot** after the first import (and after a font file with the same name changes).
+  reboot** after the first import (and after a font file with the same name changes); the owner
+  found that a force stop of KWGT and reopening it is often enough.
 - **English weekday** with a half-cut word (v51–v53) was tried and dropped by the owner.
 - Bridge visibility: Breezy has no `<queries>` entry for its own Update Notifier, so it only
   sees the bridge after the bridge read its provider; the bridge re-reads it on boot/update

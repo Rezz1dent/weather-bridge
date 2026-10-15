@@ -50,25 +50,58 @@ Russian (switch in the top-right corner).
 
 ## Breezy Minimal widget
 
+### Install
+
 1. Download `Breezy_Minimal_*.kwgt` (or the `.zip` with it) from [Releases](../../releases) or
    [`widget/`](widget) and open it in KWGT.
-2. **Reboot the phone once** after the first import: KWGT shows the bundled Manrope fonts on
-   the home screen only after a reboot.
-3. Optional settings in KWGT → **Globals**:
+2. If the text appears in a standard font instead of Manrope: KWGT has not picked up the fonts
+   bundled with the preset yet. Usually it helps to **force stop KWGT** (Settings → Apps → KWGT
+   → Force stop) and open it again; if that does not help, restart the phone. Usually this is
+   needed only once, after the first import.
+
+### What it shows
+
+**Top row:** clock (hours bold, minutes light), current temperature and weather icon. The icon
+is the same one Breezy shows; sun and moon follow the actual sunrise and sunset.
+
+**Middle row, left:** the date. **Right:**
+- wind: the arrow points where the wind blows, speed in m/s;
+- precipitation now, mm: appears **only while it rains or snows** (current hour of Breezy's
+  forecast) and disappears when it is dry; the icon changes by itself: drop for rain,
+  snowflake for snow, snowflake with a drop for sleet;
+- feels-like temperature (person icon).
+
+**Bottom row, left:**
+- next alarm with its weekday (crossed-out icon and "—" when no alarm is set);
+- next sunset by day or next sunrise by night (calculated by KWGT for your location).
+
+**Bottom row, right:**
+- today's high/low;
+- tomorrow's high/low (calendar icon);
+- umbrella: appears **only when tomorrow's chance of precipitation reaches the threshold**
+  (`umbrella_min`, 60% in the preset), with the chance in % and the expected amount in mm; the
+  mm icon also changes for rain, snow and sleet.
+
+The middle and bottom rows pick a larger font when everything fits and a slightly smaller one
+when the values get long, so nothing overlaps.
+
+Taps: the weather area opens Breezy Weather; the clock opens the clock app of ColorOS / OnePlus
+(on other phones, change the "Ярлык Часов" element's action in KWGT).
+
+### Settings (KWGT → Globals)
 
 | Global | Meaning |
 |---|---|
-| `umbrella_min` | Show the umbrella from this chance of precipitation tomorrow, % (preset: 60; 0 means 70) |
-| `umbrella_test` | Always show the umbrella (test) |
+| `umbrella_min` | Umbrella threshold: chance of precipitation tomorrow, %. Preset: 60; 0 means 70 |
+| `umbrella_test` | Always show the umbrella (to check how it looks) |
 | `maximal` | Fill every row with its longest value, to check for overlaps |
-| `precip_test` | Precipitation icon test: 0 real data, 1 rain, 2 snow, 3 sleet |
+| `precip_test` | Show the precipitation blocks with a given icon: 0 real data, 1 rain, 2 snow, 3 sleet |
 
 With `maximal` on (every row at its longest, smaller font):
 
 ![maximal](docs/images/widget-maximal.jpg)
 
-Rows pick a larger font when the values fit and a smaller one when they would overlap.
-Older versions are in [`widget/archive`](widget/archive).
+Older versions of the widget are in [`widget/archive`](widget/archive).
 
 ## Variables
 
