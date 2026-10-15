@@ -3,8 +3,10 @@ package com.rezz1dent.weatherbridge;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -33,7 +35,7 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * Hidden settings screen and searchable reference for all KWGT variables.
+ * Settings screen and searchable reference for all KWGT variables.
  * Tap any variable to copy $br(breezy, variable)$.
  */
 public final class MainActivity extends Activity {
@@ -45,6 +47,9 @@ public final class MainActivity extends Activity {
     private static final String LANGUAGE_KEY = "ui_language";
     private static final String[] LANGUAGES = {"en", "ru"};
     private static final String[] LANGUAGE_NAMES = {"English", "Русский"};
+
+    /** Manifest alias that puts the bridge into the launcher; enabled on install. */
+    private static final String LAUNCHER_ALIAS = "com.rezz1dent.weatherbridge.Launcher";
 
     private static final class Entry {
         final int groupRes, descriptionRes;
@@ -103,6 +108,7 @@ public final class MainActivity extends Activity {
     private EditText search;
     private TextView status;
     private Button grant;
+    private Button launcherIcon;
     private Map<String, String> latestValues = Collections.emptyMap();
 
     private int dp(float n) {
@@ -186,6 +192,11 @@ public final class MainActivity extends Activity {
         battery.setOnClickListener(v -> openBatterySettings());
         main.addView(battery);
 
+        launcherIcon = new Button(this);
+        launcherIcon.setOnClickListener(v -> toggleLauncherIcon());
+        main.addView(launcherIcon);
+        updateLauncherButton();
+
         TextView hint = text(getString(R.string.catalog_hint), 14, MAIN);
         hint.setPadding(0, dp(16), 0, dp(10));
         main.addView(hint);
@@ -231,6 +242,27 @@ public final class MainActivity extends Activity {
                 runOnUiThread(() -> { loadLatest(); drawList(); });
             }, "breezy-kwgt-first-refresh").start();
         }
+    }
+
+    private boolean launcherIconShown() {
+        return getPackageManager().getComponentEnabledSetting(
+            new ComponentName(this, LAUNCHER_ALIAS)) != PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+    }
+
+    private void updateLauncherButton() {
+        launcherIcon.setText(launcherIconShown() ? R.string.hide_icon_button : R.string.show_icon_button);
+    }
+
+    /** Hides or shows the launcher icon; the screen stays reachable from the app settings. */
+    private void toggleLauncherIcon() {
+        boolean hide = launcherIconShown();
+        getPackageManager().setComponentEnabledSetting(new ComponentName(this, LAUNCHER_ALIAS),
+            hide ? PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+                : PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
+            PackageManager.DONT_KILL_APP);
+        updateLauncherButton();
+        Toast.makeText(this, hide ? R.string.icon_hidden : R.string.icon_shown,
+            Toast.LENGTH_LONG).show();
     }
 
     /** System list of apps with battery optimization; app info as a fallback. */

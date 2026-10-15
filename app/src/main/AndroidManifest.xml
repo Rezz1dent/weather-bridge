@@ -22,6 +22,17 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <!-- Launcher icon; the bridge's screen can disable this alias to hide the icon. -->
+        <activity-alias
+            android:name="com.rezz1dent.weatherbridge.Launcher"
+            android:targetActivity="com.rezz1dent.weatherbridge.MainActivity"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
         <receiver
             android:name="com.rezz1dent.weatherbridge.ProviderUpdateReceiver"
             android:exported="true">

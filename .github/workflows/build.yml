@@ -49,8 +49,8 @@ jobs:
           APK=app/build/outputs/apk/release/app-release.apk
           AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt -type f | sort -V | tail -n1)
           "$AAPT" dump badging "$APK" > badging.txt
-          if grep -q 'launchable-activity:' badging.txt; then
-            echo "FAIL: the app must not have a launcher icon"; exit 1
+          if ! grep -q 'launchable-activity:' badging.txt; then
+            echo "FAIL: the app must install with a launcher icon (it can hide it itself)"; exit 1
           fi
           grep -q "package: name='com.rezz1dent.weatherbridge'" badging.txt
           grep -q "application-label:'Weather Bridge'" badging.txt

@@ -10,8 +10,8 @@ android {
         applicationId = "com.rezz1dent.weatherbridge"
         minSdk = 26
         targetSdk = 36
-        versionCode = 12
-        versionName = "2.0"
+        versionCode = 13
+        versionName = "2.1"
     }
 
     // Release signing key from the environment (GitHub secrets in CI); without it the release

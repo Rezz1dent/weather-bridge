@@ -22,8 +22,8 @@
     <string name="group_today">Today</string>
     <string name="group_tomorrow">Tomorrow</string>
     <string name="group_other">Other</string>
-    <string name="var_temp">Current temperature, ° (for example, 8°)</string>
-    <string name="var_feels">Feels-like temperature with a Feels like label</string>
+    <string name="var_temp">Current temperature</string>
+    <string name="var_feels">Feels-like temperature with an English label</string>
     <string name="var_like">Feels-like temperature in degrees only</string>
     <string name="var_condition">Current weather description from Breezy</string>
     <string name="var_code">Numeric weather condition code (OpenWeather-like)</string>
@@ -32,8 +32,8 @@
     <string name="var_is_day">1 by day, 0 at night (from Breezy hourly data)</string>
     <string name="var_humidity">Relative humidity, %</string>
     <string name="var_precip">Current precipitation probability, % (if available)</string>
-    <string name="var_details">Combined text: feels-like, wind arrow, m/s, humidity</string>
-    <string name="var_wind">Wind speed in km/h (English label)</string>
+    <string name="var_details">Combined text: feels-like, wind arrow and speed, humidity</string>
+    <string name="var_wind">Wind speed in km/h, English unit</string>
     <string name="var_wind_kmh">Wind speed in km/h</string>
     <string name="var_wind_ms">Wind speed in m/s</string>
     <string name="var_wind_direction">Wind direction (from), compass abbreviation</string>
@@ -42,13 +42,13 @@
     <string name="var_wind_text">Wind direction (from) + speed in m/s</string>
     <string name="var_today_max">Today\'s highest temperature, °</string>
     <string name="var_today_min">Today\'s lowest temperature, °</string>
-    <string name="var_today_range">Today\'s high/low, for example 10/7°</string>
-    <string name="var_today_compact">Ready-to-use text: Today 10/7°</string>
+    <string name="var_today_range">Today\'s high/low</string>
+    <string name="var_today_compact">Today\'s high/low with an English label</string>
     <string name="var_tomorrow_max">Tomorrow\'s highest temperature, °</string>
     <string name="var_tomorrow_min">Tomorrow\'s lowest temperature, °</string>
     <string name="var_tomorrow_range">Tomorrow\'s high ↑ and low ↓, °</string>
-    <string name="var_tomorrow">Ready-to-use tomorrow forecast text</string>
-    <string name="var_tomorrow_compact">Ready-to-use text: Tomorrow 8/4°</string>
+    <string name="var_tomorrow">Tomorrow\'s high ↑ and low ↓ with a Russian label</string>
+    <string name="var_tomorrow_compact">Tomorrow\'s high/low with an English label</string>
     <string name="var_tomorrow_precip">Tomorrow\'s precipitation probability, %</string>
     <string name="var_tomorrow_icon">Tomorrow\'s weather emoji</string>
     <string name="var_tomorrow_icon_flat">Tomorrow\'s Meteo icon glyph name</string>
@@ -62,4 +62,8 @@
     <string name="var_precip_now_icon">Icon for the precipitation now (MDI): water-outline, snowflake, snowflake-melt</string>
     <string name="var_tomorrow_precip_type">Kind of tomorrow\'s precipitation: rain, snow or mix, empty when dry</string>
     <string name="var_tomorrow_precip_icon">Icon for tomorrow\'s precipitation (MDI): water-outline, snowflake, snowflake-melt</string>
+    <string name="hide_icon_button">Hide icon from launcher</string>
+    <string name="show_icon_button">Show icon in launcher</string>
+    <string name="icon_hidden">Icon hidden. Open the bridge from Settings → Apps → Weather Bridge → App settings.</string>
+    <string name="icon_shown">Icon is back in the launcher (it may take a few seconds to appear).</string>
 </resources>

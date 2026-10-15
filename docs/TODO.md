@@ -38,7 +38,8 @@
 
 ## Launcher icon
 
-- [ ] **Install with a launcher icon, hide it from the app.** The bridge should install with a
+- [x] **Install with a launcher icon, hide it from the app.** (done in 2.1: alias
+  `com.rezz1dent.weatherbridge.Launcher`, button on the bridge's screen) The bridge should install with a
   normal launcher icon (easy to find right after installing), and its screen gets a button
   "Hide icon from launcher" / «Скрыть иконку из лаунчера» that turns it into what it is now: no
   launcher icon, opened from Android Settings → Apps → Weather Bridge → App settings. Probably
