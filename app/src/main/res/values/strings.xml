@@ -64,6 +64,7 @@
     <string name="var_tomorrow_precip_icon">Icon for tomorrow\'s precipitation (MDI): water-outline, snowflake, snowflake-melt</string>
     <string name="hide_icon_button">Hide icon from launcher</string>
     <string name="show_icon_button">Show icon in launcher</string>
-    <string name="icon_hidden">Icon hidden. Open the bridge from Settings → Apps → Weather Bridge → App settings.</string>
+    <string name="icon_hidden_title">Icon hidden</string>
+    <string name="icon_hidden">The icon disappears completely after the launcher restarts (or after a phone restart). Until then, a shortcut to the app info page may stay in its place.\n\nTo open the bridge: Settings → Apps → Weather Bridge → App settings. The icon can be brought back there.</string>
     <string name="icon_shown">Icon is back in the launcher (it may take a few seconds to appear).</string>
 </resources>

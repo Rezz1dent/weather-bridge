@@ -44,7 +44,9 @@ screen; its launcher icon can be hidden (see [Install](#install)).
 > The bridge works in the background; its icon is only needed for the setup. Afterwards you can
 > remove it with **Hide icon from launcher** on the bridge's screen. The screen then opens from
 > Android **Settings → Apps → Weather Bridge** → the gear / **App settings** button (the name
-> depends on the phone), where you can also bring the icon back.
+> depends on the phone), where you can also bring the icon back. The icon disappears completely
+> after the launcher or the phone restarts; until then a shortcut to the app info page may stay
+> in its place.
 
 1. Download `weather-bridge-*.apk` from [Releases](../../releases), install it and open
    **Weather Bridge** from the app drawer.

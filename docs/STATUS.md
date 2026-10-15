@@ -8,13 +8,15 @@ Russian.
 ## What it is
 
 - **Weather Bridge** (`app/`, Android, Java, no dependencies; installs with a launcher icon that
-  its screen can hide (activity-alias `…Launcher`, since 2.1), package and
+  its screen can hide (activity-alias `…Launcher`, since 2.1; Android 10+ then shows a synthetic
+  "app info" icon until the launcher restarts — seen on the owner's OnePlus/ColorOS, gone after a
+  reboot), package and
   namespace `com.rezz1dent.weatherbridge`; until 1.8 it was "Breezy Bridge",
   `com.rezz1dent.breezykwgtbridge`): reads Breezy Weather's ContentProvider
   (`org.breezyweather.provider.weather`, needs Breezy 6.1+ and the `READ_PROVIDER`
   permission) when Breezy's "Update Notifier" broadcast arrives, and sends ~40 variables to
   KWGT as `$br(breezy, name)$` (the KWGT extension name stays `breezy`, the presets use it).
-  Current version **2.1** (versionCode 13). GitHub Actions workflow "Build" builds the release
+  Current version **2.2** (versionCode 14). GitHub Actions workflow "Build" builds the release
   APK on pushes to `main` (artifact `weather-bridge-apk`) and publishes the GitHub release
   `v<versionName>` when that version has none yet (APK + current preset, notes from
   `docs/release-notes/v<version>.md`). Tag pushes from the cloud session are blocked by its proxy,

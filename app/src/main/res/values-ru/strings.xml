@@ -64,6 +64,7 @@
     <string name="var_tomorrow_precip_icon">Иконка осадков завтра (MDI): water-outline, snowflake, snowflake-melt</string>
     <string name="hide_icon_button">Скрыть иконку из лаунчера</string>
     <string name="show_icon_button">Показать иконку в лаунчере</string>
-    <string name="icon_hidden">Иконка скрыта. Открыть мост: Настройки → Приложения → Weather Bridge → Настройки приложения.</string>
+    <string name="icon_hidden_title">Иконка скрыта</string>
+    <string name="icon_hidden">Иконка полностью исчезнет после перезапуска лаунчера (или телефона). До этого на её месте может остаться ярлык на страницу «О приложении».\n\nОткрыть мост: Настройки → Приложения → Weather Bridge → Настройки приложения. Там же иконку можно вернуть.</string>
     <string name="icon_shown">Иконка вернулась в лаунчер (может появиться через несколько секунд).</string>
 </resources>

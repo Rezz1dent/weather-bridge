@@ -1,6 +1,7 @@
 package com.rezz1dent.weatherbridge;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
@@ -261,8 +262,16 @@ public final class MainActivity extends Activity {
                 : PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
             PackageManager.DONT_KILL_APP);
         updateLauncherButton();
-        Toast.makeText(this, hide ? R.string.icon_hidden : R.string.icon_shown,
-            Toast.LENGTH_LONG).show();
+        if (hide) {
+            // A dialog, not a toast: Android 12+ cuts toasts to two lines.
+            new AlertDialog.Builder(this)
+                .setTitle(R.string.icon_hidden_title)
+                .setMessage(R.string.icon_hidden)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+        } else {
+            Toast.makeText(this, R.string.icon_shown, Toast.LENGTH_LONG).show();
+        }
     }
 
     /** System list of apps with battery optimization; app info as a fallback. */
