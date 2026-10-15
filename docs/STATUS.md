@@ -23,6 +23,8 @@ Russian.
   Release notes: Russian first, then English (owner's wish, from 2026-10-15 on). The cloud
   session may not edit existing releases, and the owner does not want a separate workflow for
   that.
+  Write each list item / paragraph of a notes file on ONE line: GitHub shows line breaks in
+  release descriptions as they are, so wrapped lines break mid-sentence.
 - **KWGT preset** "Breezy Minimal" (`widget/`, older versions in `widget/archive/`): clock +
   Breezy weather, Manrope fonts, Material Design Icons via KWGT's built-in Iconify set.
 
