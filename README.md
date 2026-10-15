@@ -16,9 +16,9 @@ the repository includes **Breezy Minimal**, a KWGT widget built on these variabl
 [Example: Breezy Minimal widget](#example-breezy-minimal-widget) · [Build](#build) ·
 [Credits and license](#credits-and-license)
 
-# Weather Bridge
+## Weather Bridge
 
-## How it works
+### How it works
 
 ```
 Breezy Weather ──(Update Notifier broadcast)──▶ Weather Bridge ──(reads Breezy's provider)
@@ -30,17 +30,18 @@ Every time Breezy refreshes the weather it notifies the bridge; the bridge reads
 weather ContentProvider and sends about 40 variables to KWGT. Day/night icons switch at
 sunrise and sunset even without a refresh.
 
-## Requirements
+### Requirements
 
 - Android 8.0+
 - Breezy Weather **6.1.0+** (with its weather ContentProvider)
-- KWGT 3.80+ (built-in Material Design Icons)
+- KWGT 3.80+ (built-in Material Design Icons); loading a preset from a file, like the example
+  widget below, needs KWGT Pro
 
-## Install
+### Install
 
 1. Download `weather-bridge-*.apk` from [Releases](../../releases) and install it.
    The app has **no launcher icon** on purpose: open it from
-   **Settings → Apps → Weather Bridge → Open app settings**, or from Breezy's settings.
+   **Settings → Apps → Weather Bridge → Open app settings** (or the gear on its app info page).
 2. Tap **Allow access to Breezy Weather**.
 3. In Breezy Weather: **Settings → Widgets & live wallpapers → Send weather data to Breezy
    Weather Update Notifier** → enable **Weather Bridge**.
@@ -48,60 +49,62 @@ sunrise and sunset even without a refresh.
    background updates are not blocked.
 5. Refresh the weather in Breezy, or tap **Read Breezy data and send to KWGT**.
 
-The settings screen lists every variable; tap one to copy its formula. Interface: English or
+The bridge's screen lists every variable; tap one to copy its formula. Interface: English or
 Russian (switch in the top-right corner).
 
-## Variables
+### Variables
 
 In KWGT, write `$br(breezy, name)$`, e.g. `$br(breezy, temp)$` for the current temperature.
-Values come in Russian format where it matters (`12,5 м/с`); empty values mean "no data" or
-"nothing to show" (e.g. `precip_now` when it is dry), so a formula can hide an element with
-`if(br(breezy, precip_now) != "", …)`.
+
+- Numbers use a decimal comma and Russian units (`1,1 м/с`, `4 км/ч`); a few ready-made texts
+  carry English labels (`feels`, `details`, `today_compact`, `tomorrow_compact`, `wind`).
+- An empty value means "no data" or "nothing to show" (e.g. `precip_now` when it is dry), so a
+  formula can hide an element: `$if(br(breezy, precip_now) != "", br(breezy, precip_now) + " мм")$`.
 
 <details>
 <summary><b>All variables</b> (click to expand)</summary>
 
-| Group | Variable | Value |
-|---|---|---|
-| Now | `temp` | Current temperature, ° (for example, 8°) |
-| Now | `feels` | Feels-like temperature with a Feels like label |
-| Now | `like` | Feels-like temperature in degrees only |
-| Now | `condition` | Current weather description from Breezy |
-| Now | `code` | Numeric weather condition code (OpenWeather-like) |
-| Now | `icon` | Weather emoji |
-| Now | `icon_flat` | Glyph name in the Meteo icon font |
-| Now | `icon_mdi` | Material Design Icons name, as in Breezy widgets (KWGT icon set: Iconify → mdi) |
-| Now | `is_day` | 1 by day, 0 at night (from Breezy hourly data) |
-| Now | `humidity` | Relative humidity, % |
-| Now | `precip` | Current precipitation probability, % (if available) |
-| Now | `precip_now` | Precipitation now, mm (current hour), empty when dry |
-| Now | `precip_now_type` | Kind of precipitation now: rain, snow or mix (sleet), empty when dry |
-| Now | `precip_now_icon` | Icon for the precipitation now (MDI): water-outline, snowflake, snowflake-melt |
-| Now | `details` | Combined text: feels-like, wind arrow, m/s, humidity |
-| Wind | `wind` | Wind speed in km/h (English label) |
-| Wind | `wind_kmh` | Wind speed in km/h |
-| Wind | `wind_ms` | Wind speed in m/s |
-| Wind | `wind_direction` | Wind direction (from), compass abbreviation |
-| Wind | `wind_degrees` | Wind direction (from), bearing 0–359° |
-| Wind | `wind_arrow` | Arrow pointing in the direction the wind blows |
-| Wind | `wind_text` | Wind direction (from) + speed in m/s |
-| Today | `today_max` | Today's highest temperature, ° |
-| Today | `today_min` | Today's lowest temperature, ° |
-| Today | `today_range` | Today's high/low, for example 10/7° |
-| Today | `today_compact` | Ready-to-use text: Today 10/7° |
-| Tomorrow | `tomorrow_max` | Tomorrow's highest temperature, ° |
-| Tomorrow | `tomorrow_min` | Tomorrow's lowest temperature, ° |
-| Tomorrow | `tomorrow_range` | Tomorrow's high ↑ and low ↓, ° |
-| Tomorrow | `tomorrow` | Ready-to-use tomorrow forecast text |
-| Tomorrow | `tomorrow_compact` | Ready-to-use text: Tomorrow 8/4° |
-| Tomorrow | `tomorrow_precip` | Tomorrow's precipitation probability, % |
-| Tomorrow | `tomorrow_precip_mm` | Tomorrow's precipitation, mm (day + night), empty when dry |
-| Tomorrow | `tomorrow_precip_type` | Kind of tomorrow's precipitation: rain, snow or mix, empty when dry |
-| Tomorrow | `tomorrow_precip_icon` | Icon for tomorrow's precipitation (MDI): water-outline, snowflake, snowflake-melt |
-| Tomorrow | `tomorrow_icon` | Tomorrow's weather emoji |
-| Tomorrow | `tomorrow_icon_flat` | Tomorrow's Meteo icon glyph name |
-| Tomorrow | `tomorrow_icon_mdi` | Tomorrow's Material Design Icons name (Iconify → mdi) |
-| Other | `location` | Location name from Breezy |
+| Group | Variable | Value | Example |
+|---|---|---|---|
+| Now | `temp` | Current temperature | `8°` |
+| Now | `feels` | Feels-like temperature with an English label | `Feels like 7°` |
+| Now | `like` | Feels-like temperature in degrees only | `7°` |
+| Now | `condition` | Current weather description from Breezy | (Breezy's text) |
+| Now | `code` | Numeric weather condition code (OpenWeather-like) | `800` |
+| Now | `icon` | Weather emoji | `☀️` |
+| Now | `icon_flat` | Glyph name in the Meteo icon font | `sun3` |
+| Now | `icon_mdi` | Material Design Icons name, as in Breezy widgets (KWGT icon set: Iconify → mdi) | `weather-sunny` |
+| Now | `is_day` | 1 by day, 0 at night (from Breezy hourly data) | `1` |
+| Now | `humidity` | Relative humidity, % | `76%` |
+| Now | `precip` | Current precipitation probability, % (if available) | `20%` |
+| Now | `precip_now` | Precipitation now, mm (current hour), empty when dry | `0,6` |
+| Now | `precip_now_type` | Kind of precipitation now: rain, snow or mix (sleet), empty when dry | `rain` |
+| Now | `precip_now_icon` | Icon for the precipitation now (MDI): water-outline, snowflake, snowflake-melt | `water-outline` |
+| Now | `details` | Combined text: feels-like, wind arrow and speed, humidity | `Like 7°  ↖ 1,1м/с  💧76%` |
+| Wind | `wind` | Wind speed in km/h, English unit | `4 km/h` |
+| Wind | `wind_kmh` | Wind speed in km/h | `4 км/ч` |
+| Wind | `wind_ms` | Wind speed in m/s | `1,1 м/с` |
+| Wind | `wind_direction` | Wind direction (from), compass abbreviation | `ЮВ` |
+| Wind | `wind_degrees` | Wind direction (from), bearing 0–359° | `135°` |
+| Wind | `wind_arrow` | Arrow pointing in the direction the wind blows | `↖` |
+| Wind | `wind_text` | Wind direction (from) + speed in m/s | `ЮВ · 1,1 м/с` |
+| Today | `today_max` | Today's highest temperature, ° | `11°` |
+| Today | `today_min` | Today's lowest temperature, ° | `3°` |
+| Today | `today_range` | Today's high/low | `11/3°` |
+| Today | `today_compact` | Today's high/low with an English label | `Today: 11/3°` |
+| Tomorrow | `tomorrow_max` | Tomorrow's highest temperature, ° | `10°` |
+| Tomorrow | `tomorrow_min` | Tomorrow's lowest temperature, ° | `6°` |
+| Tomorrow | `tomorrow_range` | Tomorrow's high ↑ and low ↓, ° | `↑10°  ↓6°` |
+| Tomorrow | `tomorrow` | Tomorrow's high ↑ and low ↓ with a Russian label | `Завтра ↑10°  ↓6°` |
+| Tomorrow | `tomorrow_compact` | Tomorrow's high/low with an English label | `Tomorrow: 10/6°` |
+| Tomorrow | `tomorrow_precip` | Tomorrow's precipitation probability, % | `80%` |
+| Tomorrow | `tomorrow_precip_mm` | Tomorrow's precipitation, mm (day + night), empty when dry | `4,2` |
+| Tomorrow | `tomorrow_precip_type` | Kind of tomorrow's precipitation: rain, snow or mix, empty when dry | `snow` |
+| Tomorrow | `tomorrow_precip_icon` | Icon for tomorrow's precipitation (MDI): water-outline, snowflake, snowflake-melt | `snowflake` |
+| Tomorrow | `tomorrow_icon` | Tomorrow's weather emoji | `🌨️` |
+| Tomorrow | `tomorrow_icon_flat` | Tomorrow's Meteo icon glyph name | `snowy4` |
+| Tomorrow | `tomorrow_icon_mdi` | Tomorrow's Material Design Icons name (Iconify → mdi) | `weather-snowy` |
+| Other | `location` | Location name from Breezy | (Breezy's location name) |
 
 </details>
 
@@ -112,10 +115,11 @@ Notes:
   `$br(breezy, icon_mdi)$`. Icon fonts bundled inside a preset do not work on the home screen,
   so the bridge relies on icon sets built into KWGT.
 - **Kind of precipitation** (`precip_now_type`, `tomorrow_precip_type`): Breezy reports rain,
-  snow and ice separately (snow in mm of water); the smaller of rain and snow counts from a
-  quarter of the sum, a quarter of ice makes it `mix`; a source without the split gives `rain`.
+  snow and ice separately, all in mm of water. Mostly rain gives `rain`, mostly snow gives
+  `snow`; at least a quarter of each, or a quarter of ice (freezing rain), gives `mix`. A weather
+  source that does not split precipitation always gives `rain`.
 
-## Troubleshooting
+### Troubleshooting
 
 **Breezy says "no compatible packages" / does not list the bridge.** Breezy does not declare its
 own Update Notifier in its manifest `<queries>`, so on Android 11+ it sees the bridge only after
@@ -126,20 +130,22 @@ completely, reopen its settings and enable the bridge again.
 **The widget shows old data.** Check battery restrictions (step 4) and the "Data received"
 time on the bridge's screen.
 
-# Example: Breezy Minimal widget
+## Example: Breezy Minimal widget
 
 A KWGT widget made for the bridge: one look at the time, the weather now, today and tomorrow.
+It shows how the variables can be used, and works as is once the bridge is set up.
 
-## Install
+### Install
 
-1. Download `Breezy_Minimal_*.kwgt` (or the `.zip` with it) from [Releases](../../releases) or
-   [`widget/`](widget) and open it in KWGT.
-2. If the text appears in a standard font instead of Manrope: KWGT has not picked up the fonts
-   bundled with the preset yet. Usually it helps to **force stop KWGT** (Settings → Apps → KWGT
-   → Force stop) and open it again; if that does not help, restart the phone. Usually this is
-   needed only once, after the first import.
+1. Set up Weather Bridge (above).
+2. Download `Breezy_Minimal_*.kwgt` (or the `.zip` with it) from [Releases](../../releases) or
+   [`widget/`](widget) and load it into a KWGT widget stretched to the full screen width.
+3. If the text appears in a standard font instead of Manrope, KWGT has not picked up the fonts
+   bundled with the preset yet: **force stop KWGT** (Settings → Apps → KWGT → Force stop) and
+   open it again; if that does not help, restart the phone. This is normally needed only once,
+   after the first import.
 
-## Legend
+### Legend
 
 Everything the widget can show, here with the test values of the `maximal` switch:
 
@@ -164,7 +170,7 @@ Everything the widget can show, here with the test values of the `maximal` switc
 Taps: the weather opens Breezy Weather, the clock opens the clock app of ColorOS / OnePlus (on
 other phones change the action of the "Ярлык Часов" element in KWGT).
 
-## How it adapts
+### How it adapts
 
 - **Elements appear and disappear** with the weather: precipitation now only while it is
   raining or snowing, the umbrella and tomorrow's mm only when precipitation tomorrow is likely
@@ -174,18 +180,18 @@ other phones change the action of the "Ярлык Часов" element in KWGT).
 - **Bottom row spacing.** When the bottom row gets crowded, its left half moves a little to the
   left and its right half a little to the right.
 
-## Settings (KWGT → Globals)
+### Settings (KWGT → Globals)
 
 | Global | Meaning |
 |---|---|
 | `umbrella_min` | Umbrella threshold: chance of precipitation tomorrow, %. Preset: 60; 0 means 70 |
 | `umbrella_test` | Always show the umbrella (to check how it looks) |
 | `maximal` | Fill every row with its longest value, to check for overlaps (second screenshot) |
-| `precip_test` | Show the precipitation blocks with a given icon: 0 real data, 1 rain, 2 snow, 3 sleet |
+| `precip_test` | Show both precipitation blocks and the umbrella with a given icon: 0 real data, 1 rain, 2 snow, 3 sleet |
 
 Older versions of the widget are in [`widget/archive`](widget/archive).
 
-# Build
+## Build
 
 ```
 ./gradlew :app:assembleRelease
@@ -206,7 +212,7 @@ Android will not update it in place.
 | [`scripts/`](scripts) | Python scripts that build the presets and the Manrope fonts |
 | [`docs/`](docs) | Project status, KWGT file format notes, TODO, release notes |
 
-# Credits and license
+## Credits and license
 
 - Weather data: [Breezy Weather](https://github.com/breezy-weather/breezy-weather) (LGPL-3.0)
   and the forecast source chosen in it.
@@ -216,7 +222,7 @@ Android will not update it in place.
   License 1.1 ([`widget/OFL-Manrope.txt`](widget/OFL-Manrope.txt)); the preset bundles
   versions modified by `scripts/make_manrope_fonts.py`.
 - The project started in a fork of [LeanBitLab/Lwidget](https://github.com/LeanBitLab/Lwidget).
-- Made with the direct participation of [Claude Code](https://claude.com/claude-code), which
-  wrote most of the code, the widget and these docs together with the author.
+- Made with the direct participation of [Claude Code](https://claude.com/claude-code): the
+  bridge, the widget and this documentation were written together with it.
 
 Weather Bridge is licensed under the [GNU General Public License v3.0](LICENSE).
