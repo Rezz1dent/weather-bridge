@@ -1,0 +1,32 @@
+name: Release notes
+
+# Copies docs/release-notes/<tag>.md into the description of the existing release <tag>.
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/release-notes/**
+      - .github/workflows/release-notes.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update release descriptions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for NOTES in docs/release-notes/*.md; do
+            TAG=$(basename "$NOTES" .md)
+            if gh release view "$TAG" > /dev/null 2>&1; then
+              gh release edit "$TAG" --notes-file "$NOTES"
+              echo "$TAG: updated"
+            else
+              echo "$TAG: no release yet"
+            fi
+          done
