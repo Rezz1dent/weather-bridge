@@ -36,7 +36,7 @@ Docs: `README.md` (Russian, shown by default) / `README.en.md` (English) (setup,
 before editing presets). Preset build scripts in `scripts/` (abandoned ones in
 `scripts/archive/`).
 
-## Current widget: v8.0 (`widget/Breezy_Minimal_v80__Manrope.kwgt`)
+## Current widget: v8.1 (`widget/Breezy_Minimal_v81__Manrope.kwgt`)
 
 Built by a chain of scripts from the owner's hand-tuned exports:
 `v70` (exported from the phone) → `build_v71_preset.py` → `build_v72_preset.py` → owner's
@@ -45,7 +45,9 @@ hand-tuned `v73` (exported; sizes: middle row 22, bottom row 18) → `build_v73_
 move apart: with the small font the left groups shift 8 units left, the right ones 8 right) = `v77`
 → `build_v78_preset.py` (only the bottom row moves apart; the middle one has room) = `v78`.
 → `build_v79_preset.py` (no alarm: crossed-out icon only, no "—") = `v79`.
-→ `build_v80_preset.py` (small rows in the owner's colour `#FFD7EDFF`, light blue; was `#B8FFFFFF`) = `v80`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
+→ `build_v80_preset.py` (small rows in the owner's colour `#FFD7EDFF`, light blue; was `#B8FFFFFF`) = `v80`.
+(owner rolled the colour back) → `build_v81_preset.py` on **v79**: middle row in Manrope SemiBold
+(bundled `fonts/Manrope-SemiBold.ttf`, estimate 0.54 em/char) = `v81`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
 `Manrope[wght].ttf` from google/fonts; static weights, tabular clock digits, narrow minus,
 spacer glyphs in `Manrope-Light-Spaced`).
 
