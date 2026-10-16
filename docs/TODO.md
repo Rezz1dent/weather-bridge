@@ -50,3 +50,16 @@
 
 - [x] **New app icon.** Drafts A/B/C were offered on 2026-10-15; the owner decided to keep the
   current icon. Do not change it.
+
+## Widget visuals (after the features)
+
+The owner finds the visuals the weakest part of Breezy Minimal. Plan: first 2–3 mockups next to the
+current widget on his wallpaper, he picks a direction, only then change the preset.
+
+- [ ] **Rhythm and spacing:** one vertical step for clock → line → middle row → bottom row.
+- [ ] **Hierarchy by opacity, not colour** (colours were rejected): middle row a bit brighter, bottom row quieter.
+- [ ] **Icons vs text:** MDI outline icons matched to Manrope in weight and optical size, aligned to the cap height.
+- [ ] **Divider line:** soft fade towards both ends (it is already 1 px, cannot be thinner). In progress.
+- [ ] **Temperature block:** proportions of digits, degree sign and weather icon; alignment with the clock.
+- [ ] **Optical alignment of the edges:** date vs the clock's first digit, weather icon vs the right column.
+- [ ] **Optional backing:** a barely visible translucent rounded shape for busy wallpapers.
