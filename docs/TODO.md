@@ -60,7 +60,9 @@ current widget on his wallpaper, he picks a direction, only then change the pres
 - [ ] **Hierarchy by opacity, not colour** (colours were rejected): middle row a bit brighter, bottom row quieter.
 - [ ] **Icons vs text:** MDI outline icons matched to Manrope in weight and optical size, aligned to the cap height.
 - [ ] **Divider line:** soft fade towards both ends (it is already 1 px, cannot be thinner). Tried a radial
-  gradient by hand (2026-10-16): the owner did not like it and turned it off. Revisit only within a mockup.
+  gradient by hand (2026-10-16): the owner did not like it and turned it off. Reason: it lights up the
+  centre, which is empty; the content sits in a left and a right block. Ideas for a mockup: two halves fading
+  towards the centre (bright under the blocks), or a gap in the middle.
 - [ ] **Temperature block:** proportions of digits, degree sign and weather icon; alignment with the clock.
 - [ ] **Optical alignment of the edges:** date vs the clock's first digit, weather icon vs the right column.
 - [ ] **Optional backing:** a barely visible translucent rounded shape for busy wallpapers.
