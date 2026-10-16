@@ -23,6 +23,10 @@ Russian.
   hence this. To release: bump `versionName`/`versionCode`, add the notes file, push. A new
   preset in `widget/` (file name `…_vNN_…`) gets its own release `widget-N.N` the same way
   (notes `docs/release-notes/widget-N.N.md`).
+  **Branches:** work goes to `dev`; every push there rebuilds the rolling pre-release
+  `testing` (APK + current widget, replaced each time) for the owner to try. `main` and the real
+  releases are updated only when the owner says to publish: merge `dev` into `main` with one
+  release per version and one combined notes file.
   Release notes: Russian first, then English (owner's wish, from 2026-10-15 on). The cloud
   session may not edit existing releases, and the owner does not want a separate workflow for
   that.

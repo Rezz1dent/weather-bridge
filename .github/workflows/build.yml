@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - app/**
       - widget/**
@@ -104,3 +104,21 @@ jobs:
           [ -f "$NOTES" ] || NOTES=/dev/null
           gh release create "$TAG" widget/*.kwgt widget/*.zip \
             --target "$GITHUB_SHA" --title "Breezy Minimal ${TAG#widget-}" --notes-file "$NOTES"
+
+      - name: Testing pre-release (dev)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # One rolling pre-release: the latest dev build replaces the previous one.
+          gh release delete testing --cleanup-tag --yes > /dev/null 2>&1 || true
+          {
+            echo "Пробная сборка из ветки dev, ещё не опубликованная версия. Заменяется при каждом изменении."
+            echo
+            echo "Test build from the dev branch, not a published version. Replaced on every change."
+            echo
+            echo "Commit: $GITHUB_SHA"
+            git log -1 --format='%s' "$GITHUB_SHA"
+          } > testing-notes.md
+          gh release create testing dist/*.apk widget/*.kwgt widget/*.zip --prerelease \
+            --target "$GITHUB_SHA" --title "Testing (dev)" --notes-file testing-notes.md
