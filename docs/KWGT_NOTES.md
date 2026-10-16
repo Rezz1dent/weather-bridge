@@ -93,6 +93,18 @@ spacing. Workaround used in v51: our own font with empty **spacer glyphs** of ex
 
 Read in formulas with `gv(name)`; bind a property with toggle `100` + `internal_globals`.
 
+**Touch actions** (`internal_events`): `{"type": "SINGLE_TAP", "action": "LAUNCH_APP", "intent": "intent:#Intent;…;end"}`
+or `{"type": "SINGLE_TAP", "action": "SWITCH_GLOBAL", "switch": "<global>"}` — toggles a SWITCH global and steps a
+LIST global (`{"type": "LIST", "entries": "0, 1, 2", "value": "0"}`) to its next entry, wrapping around.
+
+**Flows** (`preset_root.internal_flows`, tab «Потоки»): a flow has triggers `t` and actions `a`, run in order, each
+action passing its result to the next. Working example (v8.4, resets the sun tap mode):
+`{"name": …, "t": [{"type": "T_FORMULA", "params": {"formula": "$gv(sun)$", "trigger": "NOT_EMPTY"}}],
+"a": [{"type": "A_DELAY", "params": {"delay_unit": "10"}}, {"type": "A_FORMULA", "params": {"formula": "0"}},
+{"type": "A_GLOBAL", "params": {"global": "sun"}}]}` (ids: random 8-char strings). A_GLOBAL has no value field: it
+stores the previous action's result. Trigger modes: ON_CHANGE, NOT_EMPTY ("not 0 or empty"). Other triggers in the
+editor: manual, preset loaded, cron.
+
 **Global folders and descriptions: do not use.** The owner tried (2026-10-15): a global copied into
 a folder stops working (formulas keep pointing at the old one), and adding a description through
 "edit" creates a new global that the formulas do not use. Globals stay flat, with titles only.

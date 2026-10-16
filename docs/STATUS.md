@@ -40,7 +40,7 @@ Docs: `README.md` (Russian, shown by default) / `README.en.md` (English) (setup,
 before editing presets). Preset build scripts in `scripts/` (abandoned ones in
 `scripts/archive/`).
 
-## Current widget: v8.2 on `dev` (`widget/Breezy_Minimal_v82__Manrope.kwgt`; `main` has v8.1)
+## Current widget: v8.4 on `dev` (`widget/Breezy_Minimal_v84__Manrope.kwgt`; `main` has v8.1)
 
 Built by a chain of scripts from the owner's hand-tuned exports:
 `v70` (exported from the phone) → `build_v71_preset.py` → `build_v72_preset.py` → owner's
@@ -55,7 +55,10 @@ move apart: with the small font the left groups shift 8 units left, the right on
 Owner's export test21 (v79-based with his own `Manrope-Semibold.ttf`, temperature x 85, estimate back at
 0.52, LIST global `sun` "0, 1, 2" + tap SWITCH_GLOBAL sun on `Sun`) → `build_v82_preset.py` (tap cycles next event /
 other event / day length) = `v82`. KWGT: SWITCH_GLOBAL on a LIST global cycles its entries. Reset after a
-minute = a KWGT flow made by hand (not in the file yet). Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
+minute = a KWGT flow made by hand.
+→ owner's export v8.4 = v82 + his flow (sun back to 0 10 s after a tap; see KWGT_NOTES) + no calendar tap
+on the bottom-left row (so tapping the sun time does not open the calendar); only the description and
+the flow name changed by script = `v84` (there is no v83). Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
 `Manrope[wght].ttf` from google/fonts; static weights, tabular clock digits, narrow minus,
 spacer glyphs in `Manrope-Light-Spaced`).
 
