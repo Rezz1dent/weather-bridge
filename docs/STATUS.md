@@ -59,7 +59,7 @@ minute = a KWGT flow made by hand.
 → owner's export v8.4 = v82 + his flow (sun back to 0 10 s after a tap; see KWGT_NOTES) + no calendar tap
 on the bottom-left row (so tapping the sun time does not open the calendar); only the description and
 the flow name changed by script = `v84` (there is no v83).
-→ `build_v85_preset.py` (clock Bold + Light instead of ExtraBold + ExtraLight, trial; fonts from
+→ `build_v85_preset.py` (clock Bold + Light instead of ExtraBold + ExtraLight, kept by the owner; fonts from
 `make_manrope_fonts.py`, which now also makes Light/Bold Tnum) = `v85`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
 `Manrope[wght].ttf` from google/fonts; static weights, tabular clock digits, narrow minus,
 spacer glyphs in `Manrope-Light-Spaced`).
