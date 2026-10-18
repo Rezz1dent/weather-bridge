@@ -13,8 +13,8 @@ import sys
 from fontTools.ttLib import TTFont
 from fontTools.varLib import instancer
 
-WEIGHTS = [("ExtraLight", 200, True), ("Regular", 400, False),
-           ("SemiBold", 600, False), ("ExtraBold", 800, True)]
+WEIGHTS = [("ExtraLight", 200, True), ("Light", 300, True), ("Regular", 400, False),
+           ("SemiBold", 600, False), ("Bold", 700, True), ("ExtraBold", 800, True)]
 # Light with spacer glyphs for the weekday word (see add_spacers).
 SPACED = ("Light", 300)
 SPACER_FIRST = 0xE100

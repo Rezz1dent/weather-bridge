@@ -40,7 +40,7 @@ Docs: `README.md` (Russian, shown by default) / `README.en.md` (English) (setup,
 before editing presets). Preset build scripts in `scripts/` (abandoned ones in
 `scripts/archive/`).
 
-## Current widget: v8.4 on `dev` (`widget/Breezy_Minimal_v84__Manrope.kwgt`; `main` has v8.1)
+## Current widget: v8.5 on `dev` (`widget/Breezy_Minimal_v85__Manrope.kwgt`; `main` has v8.1)
 
 Built by a chain of scripts from the owner's hand-tuned exports:
 `v70` (exported from the phone) → `build_v71_preset.py` → `build_v72_preset.py` → owner's
@@ -58,7 +58,9 @@ other event / day length) = `v82`. KWGT: SWITCH_GLOBAL on a LIST global cycles i
 minute = a KWGT flow made by hand.
 → owner's export v8.4 = v82 + his flow (sun back to 0 10 s after a tap; see KWGT_NOTES) + no calendar tap
 on the bottom-left row (so tapping the sun time does not open the calendar); only the description and
-the flow name changed by script = `v84` (there is no v83). Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
+the flow name changed by script = `v84` (there is no v83).
+→ `build_v85_preset.py` (clock Bold + Light instead of ExtraBold + ExtraLight, trial; fonts from
+`make_manrope_fonts.py`, which now also makes Light/Bold Tnum) = `v85`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
 `Manrope[wght].ttf` from google/fonts; static weights, tabular clock digits, narrow minus,
 spacer glyphs in `Manrope-Light-Spaced`).
 

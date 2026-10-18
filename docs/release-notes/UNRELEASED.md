@@ -8,3 +8,7 @@ Collected on `dev`; becomes the notes of the next published release.
 - EN: Tapping the sunrise/sunset time cycles what it shows: the next event (as before) → the other event (sunrise by day, sunset by night) → day length → back. It returns to the usual view by itself after 10 seconds (a KWGT flow inside the widget).
 - RU/EN: Owner's tweaks from the editor kept: temperature 5 units further left, own SemiBold font file. / Owner's editor tweaks kept.
 - RU: Нажатие на левую часть нижней строки больше не открывает календарь. / EN: Tapping the left part of the bottom row no longer opens the calendar.
+
+## Breezy Minimal 8.5 (trial)
+
+- RU: Часы: часы шрифтом Manrope Bold, минуты — Light (было ExtraBold и ExtraLight). / EN: Clock: hours in Manrope Bold, minutes in Light (were ExtraBold and ExtraLight).
