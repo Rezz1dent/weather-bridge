@@ -12,3 +12,7 @@ Collected on `dev`; becomes the notes of the next published release.
 ## Breezy Minimal 8.5
 
 - RU: Часы: часы шрифтом Manrope Bold, минуты — Light (было ExtraBold и ExtraLight). / EN: Clock: hours in Manrope Bold, minutes in Light (were ExtraBold and ExtraLight).
+
+## Breezy Minimal 8.6 (trial)
+
+- RU: Часы обычными (не моноширинными) цифрами: минуты стоят сразу за часами, расстояние между цифрами везде одинаковое. Зазор между часами и минутами — глобальная переменная `clock_gap`. / EN: Clock with normal (proportional) digits: the minutes follow the hours, even spacing between digits. The gap between hours and minutes is the global `clock_gap`.
