@@ -14,6 +14,15 @@ build container; summaries via search), [Kustom forum](https://forum.kustom.rock
 - **Fonts bundled in the preset** (`fonts/*.ttf`, `kfile://org.kustom.provider/fonts/…`) work on the
   home screen only after **KWGT is force-stopped and reopened** (or, failing that, a reboot) the
   first time; the editor shows them immediately.
+- **Font identity:** KWGT seems to file fonts by their name metadata, not the file name (the owner's export
+  renamed `OPPOSans4-SemiBold.ttf` to `OPPOSans4-Semibold.ttf`). A modified copy that keeps the family name and
+  weight (e.g. a letter-spaced version) looked identical in the font list and did not change the text. Give such
+  variants their own family name everywhere (name IDs 1/4/6/16/17, e.g. "OPPO Sans 4 T5") and their own file name.
+- **Letter spacing:** KWGT has no letter-spacing setting; widen the advance width of every glyph in a font copy
+  (`hmtx` + N units) instead.
+- **OPPO Sans 4.0** (owner's personal widget since v8.8): licence forbids modifying and redistributing, so the
+  cut/letter-spaced copies live only on the owner's phone (private download page), never in this repository; the
+  public preset stays on Manrope.
 - **Icon fonts bundled in the preset** (`icons/x.ttf` + `x.json`, IcoMoon) did **not** work on the home
   screen ("?" or a wrong glyph), even though the editor drew them. The old Meteo icons only worked
   because Meteo is **built into KWGT**. Use built-in sets instead:
