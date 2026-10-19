@@ -40,7 +40,7 @@ Docs: `README.md` (Russian, shown by default) / `README.en.md` (English) (setup,
 before editing presets). Preset build scripts in `scripts/` (abandoned ones in
 `scripts/archive/`).
 
-## Current widget: v8.7 on `dev` (`widget/Breezy_Minimal_v87__Manrope.kwgt`; `main` has v8.1)
+## Current widget: v8.9 on `dev` (`widget/Breezy_Minimal_v89__Manrope.kwgt`; `main` has v8.1)
 
 Built by a chain of scripts from the owner's hand-tuned exports:
 `v70` (exported from the phone) → `build_v71_preset.py` → `build_v72_preset.py` → owner's
@@ -65,7 +65,12 @@ the flow name changed by script = `v84` (there is no v83).
 place, gap = global `clock_gap`, default -4) = `v86`.
 → owner's export v8.7, unchanged: clock stack scaled to 115 % (`config_scale_value`), y -32; minutes in his
 `Manrope-Extralight.ttf` (static Google Manrope ExtraLight, proportional digits, wght 200); `clock_gap` 0;
-divider line y 5 → 8 = `v87`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
+divider line y 5 → 8 = `v87`.
+→ owner's export v8.8 = v87 + `clock_gap` 5 → `build_v89_preset.py` (blocks, as in his personal OPPO v9.4:
+temperature + icon in one horizontal stack `HORIZONTAL_TOP`; rows 2–3 as two vertical stacks, left `VERTICAL_LEFT`
+date over alarm/sun, right `VERTICAL_RIGHT` wind over today/tomorrow, x 12 + padding 8 / 0, gap 10, y 110;
+per-row shifts became paddings because offsets inside a stack do not count; an Overlap group was tried
+first and ignored the children's offsets) = `v89`. Always start the next change from the newest export of the owner. Fonts come from `make_manrope_fonts.py` (needs the variable
 `Manrope[wght].ttf` from google/fonts; static weights, tabular clock digits, narrow minus,
 spacer glyphs in `Manrope-Light-Spaced`).
 

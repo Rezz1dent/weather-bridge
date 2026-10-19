@@ -34,6 +34,13 @@ build container; summaries via search), [Kustom forum](https://forum.kustom.rock
 - **A transparent icon still casts its shadow**: hide both `paint_color` and `fx_shadow_color`.
 - **Children of an Overlap group ignored their x offset** in one test (percent drawn over the umbrella).
   For things in a row use a **Stack group** instead.
+  Confirmed again in v9.0: x and y offsets of children inside an Overlap group were ignored.
+- **Inside a Stack group offsets do not count**; shift items with `position_padding_*` (formulas work).
+  A Stack cannot pin some items left and others right: use two vertical stacks (`VERTICAL_LEFT` at
+  TOPLEFT, `VERTICAL_RIGHT` at TOPRIGHT). `VERTICAL_LEFT` is KWGT's default and is dropped on export.
+  `HORIZONTAL_TOP` aligns the tops (temperature + icon).
+- A formula that is switched off (toggle 0) stays in the export but does nothing; check the toggle, not
+  only the text.
 - Widget size comes from the launcher; with the **Auto** sizing mode KWGT stores the scale it computed
   (`config_scale_value`). The user's working setup: grid 8×3, scale 155.
 - **Manrope ascent** is 0.138 em taller than the system font: switching fonts moves text down.

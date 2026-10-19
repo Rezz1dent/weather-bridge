@@ -17,3 +17,8 @@ Collected on `dev`; becomes the notes of the next published release.
 
 - RU: Часы обычными (не моноширинными) цифрами: минуты стоят сразу за часами, расстояние между цифрами везде одинаковое. Зазор между часами и минутами — глобальная переменная `clock_gap`. / EN: Clock with normal (proportional) digits: the minutes follow the hours, even spacing between digits. The gap between hours and minutes is the global `clock_gap`.
 - RU: Часы крупнее (×1,15), минуты шрифтом Manrope ExtraLight, разделительная линия чуть ниже (правки автора в редакторе). / EN: Larger clock (×1.15), minutes in Manrope ExtraLight, divider line a bit lower (owner's tweaks in the editor).
+
+## Breezy Minimal 8.8–8.9
+
+- RU: Зазор между часами и минутами 5 (правка автора). / EN: Gap between hours and minutes 5 (owner's tweak).
+- RU: Блоки: температура с иконкой — одна группа, строки 2–3 — два столбца (дата над будильником слева, ветер над прогнозом справа); каждый блок двигается целиком одним смещением. / EN: Blocks: temperature and icon are one group, rows 2–3 are two columns (date over alarm on the left, wind over the forecast on the right); each block moves as a whole with one offset.
