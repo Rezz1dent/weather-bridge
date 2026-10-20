@@ -41,6 +41,9 @@ build container; summaries via search), [Kustom forum](https://forum.kustom.rock
   `position_padding_left/right` as the distance from the edge. Long values meet in the middle and do
   not push the edges (two fixed-width half stacks in a horizontal stack did push them). Used in the
   owner's v10.3 (`scripts/build_v100_layout.py`): the whole widget is one vertical stack of such rows.
+- **A hidden item (`config_visible` REMOVE) keeps its stack gap.** A hideable last item left the row
+  short of the edge by one gap. Fix (`scripts/fix_removed_gaps.py`): gap 0, and each item after the
+  first gets the gap as `position_padding_left`, which goes away with the hidden item.
 - **Root width** of the owner's widget (grid 8×3, scale 160) is ~515 units by eye (v10.3), not 497.
 - **Inside a Stack group offsets do not count**; shift items with `position_padding_*` (formulas work).
   A Stack cannot pin some items left and others right: use two vertical stacks (`VERTICAL_LEFT` at
