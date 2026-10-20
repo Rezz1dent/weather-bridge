@@ -35,6 +35,13 @@ build container; summaries via search), [Kustom forum](https://forum.kustom.rock
 - **Children of an Overlap group ignored their x offset** in one test (percent drawn over the umbrella).
   For things in a row use a **Stack group** instead.
   Confirmed again in v9.0: x and y offsets of children inside an Overlap group were ignored.
+- **Overlap group: anchors and padding work, offsets do not.** A row with one part at the left edge
+  and one at the right: Overlap group + invisible 1-unit-high line as wide as the widget (gives the
+  group its width) + each part in a one-item stack anchored TOPLEFT / TOPRIGHT with
+  `position_padding_left/right` as the distance from the edge. Long values meet in the middle and do
+  not push the edges (two fixed-width half stacks in a horizontal stack did push them). Used in the
+  owner's v10.3 (`scripts/build_v100_layout.py`): the whole widget is one vertical stack of such rows.
+- **Root width** of the owner's widget (grid 8×3, scale 160) is ~515 units by eye (v10.3), not 497.
 - **Inside a Stack group offsets do not count**; shift items with `position_padding_*` (formulas work).
   A Stack cannot pin some items left and others right: use two vertical stacks (`VERTICAL_LEFT` at
   TOPLEFT, `VERTICAL_RIGHT` at TOPRIGHT). `VERTICAL_LEFT` is KWGT's default and is dropped on export.
