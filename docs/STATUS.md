@@ -74,6 +74,16 @@ first and ignored the children's offsets) = `v89`. Always start the next change 
 `Manrope[wght].ttf` from google/fonts; static weights, tabular clock digits, narrow minus,
 spacer glyphs in `Manrope-Light-Spaced`).
 
+## Owner's personal OPPO line (not in the repo)
+
+OPPO Sans fonts may not be redistributed, so these presets live only on the owner's phone
+(delivered through a private page). Chain: v9.4 (blocks) → v10.0 → `build_v100_layout.py`
+(one vertical stack of edge-to-edge Overlap rows) → v10.3 (owner) → `fix_removed_gaps.py`
+→ `maximal_widest.py` → `build_v108_steps.py` → `build_v109_top.py` (clock 96, temperature
+68, icon 58) → `build_v110_nospread.py` → `fix_alarm_soon.py` = v11.1, kept by the owner with
+`layout_width` 520 and the top row line 10 narrower. A four-row layout was mocked up and
+rejected (too sparse). The public Manrope widget (v8.9 on `dev`) does not have these yet.
+
 Layout (root ~497 × 190 units at scale 160, widget 1458 × 533 px, grid 8×3, KWGT sizing Auto):
 
 ```
