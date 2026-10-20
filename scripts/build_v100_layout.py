@@ -34,7 +34,7 @@ import uuid
 import zipfile
 
 LINE = "#00000000"
-WIDTH = 497.0
+WIDTH = 515.0        # owner's v10.3 (the old ~497 was too narrow)
 TOP_Y = -15.0          # old clock y
 EDGE = 10.0            # old x of the clock, the weather group and the columns
 CLOCK_BOX = 128.0      # see the docstring
@@ -54,7 +54,8 @@ def side(item, anchor, pad_key, edge):
     }
 
 
-def row(title, left, right, scale=1.0):
+def row(title, left, right, scale=1.0, static=False):
+    """static: a plain width (the top row never spreads; the owner sets it once by hand)."""
     edge = round(EDGE / scale, 2)
     line = {
         "internal_type": "ShapeModule",
@@ -64,9 +65,10 @@ def row(title, left, right, scale=1.0):
         "shape_height": 1.0,
         "paint_color": LINE,
         "position_anchor": "TOPLEFT",
-        "internal_toggles": {"shape_width": 10},
-        "internal_formulas": {"shape_width": "$gv(layout_width)%s$" % (" / %g" % scale if scale != 1 else "")},
     }
+    if not static:
+        line["internal_toggles"] = {"shape_width": 10}
+        line["internal_formulas"] = {"shape_width": "$gv(layout_width)%s$" % (" / %g" % scale if scale != 1 else "")}
     return {
         "internal_type": "OverlapLayerModule",
         "internal_title": title,
@@ -127,7 +129,7 @@ def main(base, target, title):
         "config_margin": DIVIDER_Y - (TOP_Y + CLOCK_BOX),
         "position_anchor": "TOP",
         "position_offset_y": TOP_Y,
-        "viewgroup_items": [row("Row 1 • clock | weather", clock, weather), divider, rows],
+        "viewgroup_items": [row("Row 1 • clock | weather", clock, weather, static=True), divider, rows],
     }
 
     background = items[0]
